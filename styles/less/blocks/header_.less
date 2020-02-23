@@ -1,0 +1,36 @@
+//main:../../style.less
+
+@import "logoBlock.less";
+@import "menu.less";
+
+.header {
+    margin: 18px 0;
+}
+
+.introTopSection {
+    .flex(@direction: row, @wrap: wrap);
+
+    .screen820( {
+        .btn{
+            display: none;
+        };
+    }
+
+);
+
+    .screen620( {
+        .flex(@direction: column, @wrap: nowrap);
+    }
+
+);
+
+    &__menuContainer {
+        margin: 0 30px;
+
+        .screen440( {
+            margin: 0;
+            }
+    
+        );
+    }
+}

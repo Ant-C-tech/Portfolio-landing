@@ -1,0 +1,29 @@
+//main:header_.less
+
+.menu {
+    .flexContainer(-15px);
+    margin-top   : 15px;
+    margin-bottom: 15px;
+
+    .montserrat();
+    font-weight: 700;
+    font-size  : 14px;
+    line-height: 1.15;
+    color      : @black;
+
+    .screen440( {
+        font-size  : 11px;
+        }
+
+    );
+
+    &__menuItem {
+        .flexElement(15px);
+        padding-bottom: 5px;
+        transition    : all 0.1s linear;
+
+        &:hover {
+            border-bottom: 3px solid @black;
+        }
+    }
+}

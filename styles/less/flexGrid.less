@@ -1,0 +1,19 @@
+//main:../style.less
+
+.flex(@direction, @wrap) {
+    display        : -webkit-box;
+    display        : flex;
+    flex-wrap      : @wrap;
+    justify-content: space-between;
+    align-items    : center;
+    flex-direction: @direction;
+}
+
+.flexContainer(@-margine-lr) {
+    .flex(@direction:row, @wrap:wrap);
+    margin: 0 @-margine-lr;
+}
+
+.flexElement(@margine-lr) {
+    margin: 0 @margine-lr;
+}
