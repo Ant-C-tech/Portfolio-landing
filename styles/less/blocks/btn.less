@@ -1,44 +1,43 @@
 //main:../../style.less
 
 .btn {
-    border: 2px solid @black;
+    border       : 2px solid @black;
     border-radius: 20px;
-    padding: 10px 0;
-    margin: 15px 0;
-    width: 130px;
-    transition: all 0.2s linear;
+    padding      : 10px 0;
+    margin       : 15px 0;
+    width        : 130px;
+    transition   : all 0.2s linear;
 
-    .montserrat();
-    font-weight: 700;
+    font-family: 'Bold';
     font-size  : 14px;
     line-height: 1.15;
-    color: @black;
-    text-align: center;
+    color      : @black;
+    text-align : center;
 
-    &:hover{
-        transform: scale(1.1);
+    &:hover {
+        transform       : scale(1.1);
         background-color: @grey;
-        color: @white;
+        color           : @white;
     }
 
-    &-black{
-        width: 170px;
-        background:@black;
-        color: @white;
-        box-shadow: inset;
+    &-black {
+        width       : 170px;
+        background  : @black;
+        color       : @white;
+        box-shadow  : inset;
         margin-right: 15px;
 
         .screen620( {
-            margin-right: 0;
-        }
-    
-    );
+                margin-right: 0;
+            }
+
+        );
     }
 
-    &-big{
-        width: 200px;
-        border: 1px solid @black;
-        color: @grey-vio;
+    &-big {
+        width      : 200px;
+        border     : 1px solid @black;
+        color      : @grey-vio;
         font-weight: 500;
     }
 }

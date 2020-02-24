@@ -1,16 +1,16 @@
 //main:../style.less
 
-.flex(@direction, @wrap) {
+.flex(@direction: row; @wrap: wrap; @justify: space-between) {
     display        : -webkit-box;
     display        : flex;
     flex-wrap      : @wrap;
-    justify-content: space-between;
+    justify-content: @justify;
     align-items    : center;
     flex-direction: @direction;
 }
 
 .flexContainer(@-margine-lr) {
-    .flex(@direction:row, @wrap:wrap);
+    .flex();
     margin: 0 @-margine-lr;
 }
 

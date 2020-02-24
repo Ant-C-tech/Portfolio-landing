@@ -1,19 +1,18 @@
 // main:header_.less
 
 .logoBlock {
-    min-width: 175px;
+    min-width : 175px;
     transition: all 0.2s linear;
-    margin: 15px 0;
+    margin    : 15px 0;
 
-    .flex(@direction:row, @wrap:nowrap);
+    .flex(@wrap: nowrap);
 
-    .montserrat();
-
-    &:hover{
-        .logoBlock__picContainer{
+    &:hover {
+        .logoBlock__picContainer {
             border-radius: 5%;
-        };
-        .logoBlock__textContainer{
+        }
+
+        .logoBlock__textContainer {
             transform: scale(1.1);
         }
     }
@@ -24,7 +23,7 @@
         border-radius: 50%;
         overflow     : hidden;
         margin-right : 10px;
-        transition: all 0.2s linear;
+        transition   : all 0.2s linear;
     }
 
     &__pic {
@@ -37,16 +36,16 @@
     }
 
     &__name {
-        font-weight: 700;
+        font-family: 'Bold';
         font-size  : 16px;
         line-height: 1;
         color      : @black;
     }
 
     &__prof {
-       margin-top: 5px;
-       
-        font-weight: 500;
+        margin-top: 5px;
+
+        font-family: 'Regular';
         font-size  : 12px;
         line-height: 1.3;
         color      : @black-op70;
