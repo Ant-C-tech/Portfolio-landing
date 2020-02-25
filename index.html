@@ -8,7 +8,7 @@
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="styles/style.css">
-    <script src="js/lazy.js"></script>
+
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <div class="introTopSection">
                 <div class="logoBlock">
                     <div class="logoBlock__picContainer">
-                        <img class="logoBlock__pic lazyload" data-src="img/header/logo.jpg" alt="author">
+                        <img class="logoBlock__pic lazyload" loading="lazy" data-src="img/header/logo.jpg" alt="author">
                     </div>
                     <div class="logoBlock__textContainer">
                         <p class="logoBlock__name">Lewis</p>
@@ -45,22 +45,28 @@
                     <p class="intro__text">UI & UX Designer</p>
                     <div class="intro__social">
                         <a href="https://www.behance.net/" target="_blank">
-                            <img class="intro__socialIcon lazyload" data-src="img/intro/social/behance.svg" alt="behance">
+                            <img class="intro__socialIcon lazyload" loading="lazy"
+                                data-src="img/intro/social/behance.svg" alt="behance">
                         </a>
                         <a href="https://dribbble.com/" target="_blank">
-                            <img class="intro__socialIcon lazyload" data-src="img/intro/social/dribbble.svg" alt="dribbble">
+                            <img class="intro__socialIcon lazyload" loading="lazy"
+                                data-src="img/intro/social/dribbble.svg" alt="dribbble">
                         </a>
                         <a href="https://www.linkedin.com/" target="_blank">
-                            <img class="intro__socialIcon lazyload" data-src="img/intro/social/linkedin.svg" alt="linkedin">
+                            <img class="intro__socialIcon lazyload" loading="lazy"
+                                data-src="img/intro/social/linkedin.svg" alt="linkedin">
                         </a>
                         <a href="https://www.facebook.com/" target="_blank">
-                            <img class="intro__socialIcon lazyload" data-src="img/intro/social/facebook.svg" alt="facebook">
+                            <img class="intro__socialIcon lazyload" loading="lazy"
+                                data-src="img/intro/social/facebook.svg" alt="facebook">
                         </a>
                         <a href="https://www.instagram.com/" target="_blank">
-                            <img class="intro__socialIcon lazyload" data-src="img/intro/social/instagram.svg" alt="instagram">
+                            <img class="intro__socialIcon lazyload" loading="lazy"
+                                data-src="img/intro/social/instagram.svg" alt="instagram">
                         </a>
                         <a href="https://www.twitter.com/" target="_blank">
-                            <img class="intro__socialIcon lazyload" data-src="img/intro/social/twitter.svg" alt="twitter">
+                            <img class="intro__socialIcon lazyload" loading="lazy"
+                                data-src="img/intro/social/twitter.svg" alt="twitter">
                         </a>
                     </div>
                     <div class="intro__buttons">
@@ -69,10 +75,11 @@
                     </div>
                 </div>
                 <div class="intro__photoBlock">
-                    <img class="intro__bgPic lazyload" data-src="img/intro/bg.png" alt="background image">
+                    <img class="intro__bgPic lazyload" loading="lazy" data-src="img/intro/bg.png"
+                        alt="background image">
                     <picture class="lazy">
                         <source srcset="#" data-srcset="img/intro/author_.webp" type="image/webp">
-                        <img class="intro__pic" src="#" srcset="img/intro/author_.png" alt="user photo">
+                        <img class="intro__pic" src="#" srcset="img/intro/author_.png" alt="author photo">
                     </picture>
                 </div>
             </div>
@@ -80,8 +87,28 @@
     </section>
 
     <!-- Scripts -->
+    <script>
+        (async () => {
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll("img.lazyload");
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                // Dynamically import the LazySizes library
+                let script = document.createElement("script");
+                script.async = true;
+                script.src =
+                    "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
+                document.body.appendChild(script);
+            }
+        })();
+    </script>
 
-    <script src="js/lazysizes.min.js"></script>
+    <script src="js/lazy.js"></script>
+
 </body>
+
+
 
 </html>
