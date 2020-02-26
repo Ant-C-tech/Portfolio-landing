@@ -1,0 +1,69 @@
+// main:works.less
+
+.card {
+    .flexGridElement(@margine-lr: 15px; @grid: 3);
+    .flex(@direction            : column; @wrap: nowrap; @justify: space-between);
+    align-items                 : stretch;
+    overflow                    : hidden;
+    margin-bottom               : 30px;
+
+    box-shadow   : 2px 2px 10px fade(@black-shadow, 24%);
+    border-radius: 10px;
+
+    transition: all 0.2s linear;
+
+    &:hover {
+        transform: scale(1.05) translateY(-8px);
+    }
+
+    .screen820( {
+            .flexGridElement(@margine-lr: 15px; @grid: 1);
+            max-width                   : 500px;
+            margin-bottom               : 30px;
+        }
+
+    );
+
+    &__pic {
+        width  : 100%;
+        display: block;
+    }
+
+    &__textBlock {
+        padding: 0 12px;
+        margin : 15px 0;
+
+    }
+
+    &__wrapper {
+        .flex();
+    }
+
+    &__subtitle {
+        text-align   : left;
+        margin-bottom: 10px;
+
+        font-family   : 'Regular';
+        font-size     : 12px;
+        color         : @black;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-family   : 'Bold';
+        font-size     : 16px;
+        color         : @black;
+        text-transform: uppercase;
+    }
+
+    &:nth-child(2n) {
+
+        .screen820( {
+                display: none;
+            }
+
+        );
+
+
+    }
+}

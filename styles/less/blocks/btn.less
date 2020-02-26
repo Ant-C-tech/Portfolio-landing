@@ -1,6 +1,7 @@
 //main:../../style.less
 
 .btn {
+    display: inline-block;
     border       : 2px solid @black;
     border-radius: 20px;
     padding      : 10px 0;
@@ -8,29 +9,32 @@
     width        : 130px;
     transition   : all 0.2s linear;
 
-    font-family: 'Bold';
-    font-size  : 14px;
-    line-height: 1.15;
-    color      : @black;
-    text-align : center;
+    font-family   : 'Bold';
+    font-size     : 14px;
+    line-height   : 1.15;
+    color         : @black;
+    text-align    : center;
     text-transform: uppercase;
 
     &:hover {
-        transform       : scale(1.1);
-        background-color: @grey;
+        transform       : scale(1.07);
+        background-color: @black;
         color           : @white;
+        box-shadow      : 2px 2px 10px fade(@black-shadow, 24%);
+        border          : none;
     }
 
-    &-black {
-        width       : 170px;
-        background  : @black;
-        color       : @white;
-        box-shadow  : inset;
-        margin-right: 15px;
+    &-big {
+        width: 190px;
+    }
 
-        &:hover {
-            border: 1px solid @black;
-        }
+    &-middleThin {
+        width      : 170px;
+        border     : 1px solid @grey-vio;
+        color      : @grey-vio;
+        font-family: 'Regular';
+
+        margin-right: 15px;
 
         .screen620( {
                 margin-right: 0;
@@ -39,10 +43,11 @@
         );
     }
 
-    &-big {
+    &-bigThin {
         width      : 200px;
-        border     : 1px solid @black;
+        border     : 1px solid @grey-vio;
         color      : @grey-vio;
-        font-weight: 500;
+        font-family: 'Regular';
+
     }
 }

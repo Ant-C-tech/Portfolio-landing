@@ -9,11 +9,16 @@
     flex-direction: @direction;
 }
 
-.flexContainer(@-margine-lr) {
-    .flex();
-    margin: 0 @-margine-lr;
+.flexElement(@margine-lr: 15px) {
+    margin: 0 @margine-lr;
 }
 
-.flexElement(@margine-lr) {
+.flexContainer(@-margine-lr) {
+    margin: 0 @-margine-lr;
+    align-items    : stretch;
+}
+
+.flexGridElement(@margine-lr: 15px; @grid: 1) {
     margin: 0 @margine-lr;
+    width: calc((100% / @grid) - (@margine-lr * 2));
 }

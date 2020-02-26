@@ -4,6 +4,7 @@
     &__wrapper {
         .flex(@wrap  : nowrap);
         border-bottom: 1px solid @grey-vio-op30;
+        margin-bottom: 20px;
 
         .screen820( {
                 .flex(@direction: column, @wrap: nowrap);
@@ -74,7 +75,7 @@
         transition  : all 0.2s linear;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) translateY(-5px);
         }
 
         .screen440( {
