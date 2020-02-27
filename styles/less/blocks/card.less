@@ -17,8 +17,14 @@
     }
 
     .screen820( {
+            .flexGridElement(@margine-lr: 15px; @grid: 2);
+            margin-bottom               : 30px;
+        }
+
+    );
+
+    .screen440( {
             .flexGridElement(@margine-lr: 15px; @grid: 1);
-            max-width                   : 500px;
             margin-bottom               : 30px;
         }
 
@@ -56,7 +62,7 @@
         text-transform: uppercase;
     }
 
-    &:nth-child(2n) {
+    &:nth-child(9) {
 
         .screen820( {
                 display: none;
@@ -64,6 +70,18 @@
 
         );
 
+    }
+
+    &:nth-child(8),
+    &:nth-child(7),
+    &:nth-child(6),
+    &:nth-child(5) {
+
+        .screen620( {
+                display: none;
+            }
+
+        );
 
     }
 }
