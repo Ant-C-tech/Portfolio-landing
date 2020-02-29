@@ -1,0 +1,155 @@
+//main:../../style.less
+
+.about {
+    margin-bottom: 140px;
+
+    .screen820( {
+        margin-bottom: 15px;
+    }
+
+);
+
+    &__wrapper {
+        .flex(@wrap                : wrap; @align: stretch);
+        .flexContainer(@-margine-lr: -15px);
+        margin-bottom              : 20px;
+    }
+
+
+
+    &__titleBlock {
+        text-align                  : left;
+        width                       : 420px;
+        .flexGridElement(@margine-lr: 15px; @grid: 2);
+        order                       : 1;
+        // border-right                : 1px solid @grey-vio-op30;
+        padding                     : 0 15px;
+
+        .screen820( {
+                margin-bottom: 50px;
+                text-align   : center;
+                .flexGridElement(@margine-lr: 15px; @grid: 1; @align: stretch);
+                border-right: none;
+            }
+
+        );
+
+        .screen440( {
+                width : auto;
+            }
+
+        );
+    }
+
+    &__subtitle {
+        font-family: 'Bold';
+        font-size  : 45px;
+        line-height: 1;
+        color      : @black;
+        text-transform: uppercase;
+
+        .screen1200( {
+                font-size : 30px;
+            }
+
+        );
+
+        .screen440( {
+            font-size : 20px;
+        }
+
+    );
+    }
+
+    &__title {
+        margin: 15px 0 45px;
+
+        font-family: 'Bold';
+        font-size  : 92px;
+        line-height: 1;
+        color      : @light-grey;
+        text-transform: uppercase;
+
+        .screen1200( {
+                font-size : 60px;
+            }
+
+        );
+
+        .screen440( {
+            font-size : 40px;
+        }
+
+    );
+    }
+
+    &__text {
+        font-family: 'Light';
+        font-size  : 12px;
+        line-height: 2;
+        color      : @grey;
+
+        margin-bottom: 55px;
+
+        .screen1200( {
+                margin-bottom: 15px;
+            }
+
+        );
+    }
+
+    &__buttons {
+        .flex(@justify: start );
+
+        .screen820( {
+            .flex(@justify: space-around);
+        }
+
+    );
+
+        .screen620( {
+            .flex(@direction: column, @wrap: nowrap);
+        }
+
+    );
+    }
+
+    &__photoBlock {
+        .flexGridElement(@margine-lr: 15px; @grid: 2; @align: stretch);
+        .flex();
+        border-left: 1px solid @grey-vio-op30;
+
+        .screen820( {
+                .flexGridElement(@margine-lr: 15px; @grid: 1; @align: stretch);
+                .flex(@justify: space-around);
+                border-left: none;
+                margin-bottom: 30px;
+            }
+
+        );
+    }
+
+    &__borderContainer {
+        position: relative;
+        overflow: hidden;
+        order   : 0;
+        &:before{
+            content:"";
+            position        : absolute;
+            bottom          : 0;
+            right           : 8%;
+            width           : 80%;
+            height          : 75%;
+            background-color: @light;
+            z-index         : 5;
+        }
+    }
+
+    &__pic {
+        display    : block;
+        margin-left: auto;
+        position   : relative;
+        z-index    : 10;
+        width      : 100%;
+    }
+}
