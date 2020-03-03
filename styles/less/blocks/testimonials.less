@@ -1,0 +1,87 @@
+//main:../../style.less
+
+.testimonials {
+
+    &__container {
+        background-image : url("../img/testimonials/background.jpg");
+        background-repeat: no-repeat;
+        background-size  : cover;
+        min-height       : 250px;
+        .flex(@justify   : center);
+        margin-bottom    : 180px;
+
+        position: relative;
+
+        .screen820( {
+                min-height : 300px;
+            }
+
+        );
+
+        .screen620( {
+            min-height : 350px;
+        }
+
+    );
+
+    .screen440( {
+        min-height : 400px;
+    }
+
+);
+    }
+
+    &__text {
+        max-width  : 850px;
+        padding: 0 10px;
+        font-family: 'LightItalic';
+        color      : @white;
+        font-size  : 14px;
+        line-height: 28px;
+
+        text-align: center;
+    }
+
+    &__clientCard {
+        position : absolute;
+        transform: translate3d(-50%; 0; 0);
+        bottom   : -130px;
+        left     : 50%;
+        z-index  : 100;
+
+        text-align: center;
+    }
+
+    &__picContainer {
+        width        : 110px;
+        height       : 110px;
+        border-radius: 50%;
+        overflow     : hidden;
+        border       : 4px solid @light;
+        margin       : 0 auto;
+    }
+
+    &__pic {
+        width  : 100%;
+        display: block;
+    }
+
+    &__name {
+        font-family: 'Bold';
+        font-size  : 16px;
+        line-height: 28px;
+        color      : @black;
+    }
+
+    &__company {
+        font-family: 'LightItalic';
+        font-size  : 14px;
+        line-height: 28px;
+        color      : @grey;
+    }
+
+    &__starring {
+        font-size: 16px;
+        color    : @black-op70;
+    }
+}
