@@ -1,7 +1,7 @@
 // main:works.less
 
 .card {
-    .flexGridElement(@margine-lr: 15px; @grid: 3);
+    .flexGridElement(@gridMargin: 15px; @grid: 3);
     .flex(@direction            : column; @wrap: nowrap; @justify: space-between);
     align-items                 : stretch;
     overflow                    : hidden;
@@ -17,14 +17,14 @@
     }
 
     .screen820( {
-            .flexGridElement(@margine-lr: 15px; @grid: 2);
+            .flexGridElement(@gridMargin: 15px; @grid: 2);
             margin-bottom               : 30px;
         }
 
     );
 
     .screen440( {
-            .flexGridElement(@margine-lr: 15px; @grid: 1);
+            .flexGridElement(@gridMargin: 15px; @grid: 1);
             margin-bottom               : 30px;
         }
 

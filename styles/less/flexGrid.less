@@ -6,20 +6,20 @@
     flex-wrap      : @wrap;
     justify-content: @justify;
     align-items    : @align;
-    flex-direction: @direction;
+    flex-direction : @direction;
 }
 
-.flexElement(@margine-lr: 15px) {
-    margin: 0 @margine-lr;
+.flexElement(@margin-lr: 15px) {
+    margin: 0 @margin-lr;
 }
 
-.flexContainer(@-margine-lr) {
-    margin: 0 @-margine-lr;
-    align-items    : stretch;
+.flexContainer(@-margin-lr: -15px) {
+    margin     : 0 @-margin-lr;
+    align-items: stretch;
 }
 
-.flexGridElement(@margine-lr: 15px; @grid: 1;  @align: center) {
-    margin: 0 @margine-lr;
-    width: calc((100% / @grid) - (@margine-lr * 2));
-    align-self    : @align;
+.flexGridElement(@gridMargin: 15px; @grid: 3; @align: stretch) {
+    width     : calc((100% / @grid) - (@gridMargin * 2));
+    align-self: @align;
+    margin    : 0 @gridMargin;
 }

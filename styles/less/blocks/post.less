@@ -1,0 +1,102 @@
+// main:readme.less
+.post {
+    .flexGridElement();
+
+    .flex(@direction: column; @wrap: nowrap; @justify: space-between; @align: start);
+
+    .screen820( {
+            .flexGridElement(@grid: 1);
+
+            margin-bottom: 30px;
+        }
+
+    );
+
+    text-align: left;
+    position  : relative;
+
+    &__date {
+        width     : 77px;
+        height    : 77px;
+        background: @black;
+
+        position: absolute;
+        top     : 0;
+        left    : 0;
+        z-index : 10;
+
+        .flex(@direction: column; @justify: center);
+    }
+
+    &__day {
+        font-family: 'Bold';
+        color      : @white;
+        font-size  : 16px;
+        line-height: 1;
+
+        margin-bottom: 3px;
+    }
+
+    &__img {
+        position     : relative;
+        min-height   : 257px;
+        overflow     : hidden;
+        margin-bottom: 20px;
+        width        : 100%;
+
+        .screen820( {
+                min-height : auto;
+            }
+
+        );
+    }
+
+
+    &__pic {
+        position : absolute;
+        top      : 50%;
+        left     : 50%;
+        z-index  : 1;
+        transform: translate3d(-50%; -50%; 0);
+
+        .screen820( {
+                position: relative;
+                width   : 100%;
+                display : block;
+
+                margin-bottom: 30px;
+
+                top      : 0;
+                left     : 0;
+                transform: none;
+            }
+
+        );
+    }
+
+    &__title {
+        font-family   : 'Bold';
+        color         : @black;
+        font-size     : 18px;
+        line-height   : 1;
+        text-transform: uppercase;
+        margin-bottom : 10px;
+    }
+
+    &__subtitle {
+        font-family   : 'regular';
+        color         : @black;
+        font-size     : 12px;
+        line-height   : 16px;
+        text-transform: uppercase;
+        margin-bottom : 25px;
+    }
+
+    &__text {
+        font-family  : 'light';
+        color        : @grey;
+        font-size    : 12px;
+        line-height  : 24px;
+        margin-bottom: 35px;
+    }
+}

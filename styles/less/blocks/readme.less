@@ -1,0 +1,31 @@
+//main:../../style.less
+
+@import "post.less";
+
+.readMe {
+    &__title {
+        margin-bottom: 10px;
+
+        font-family   : 'Bold';
+        color         : @black;
+        font-size     : 45px;
+        line-height   : 1;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-family: 'light';
+        color      : @grey;
+        font-size  : 18px;
+        line-height: 32px;
+
+        margin-bottom: 50px;
+    }
+
+    &__wrapper{
+        margin-bottom: 40px;
+
+        .flex();
+        .flexContainer(-15px);
+    }
+}
