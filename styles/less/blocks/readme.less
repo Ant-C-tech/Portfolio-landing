@@ -3,6 +3,15 @@
 @import "post.less";
 
 .readMe {
+
+    margin-bottom: 120px;
+
+    .screen620( {
+            margin-bottom: 30px;
+        }
+
+    );
+
     &__title {
         margin-bottom: 10px;
 
@@ -22,10 +31,27 @@
         margin-bottom: 50px;
     }
 
-    &__wrapper{
+    &__wrapper {
         margin-bottom: 40px;
 
         .flex();
         .flexContainer(-15px);
+    }
+
+    &__link {
+        font-family  : 'light';
+        color        : @grey;
+        font-size    : 14px;
+        line-height  : 18px;
+        margin-bottom: 35px;
+
+        float     : right;
+        margin-top: 20px;
+
+        .screen620( {
+                margin-top: 0;
+            }
+
+        );
     }
 }

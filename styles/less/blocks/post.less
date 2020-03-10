@@ -4,6 +4,29 @@
 
     .flex(@direction: column; @wrap: nowrap; @justify: space-between; @align: start);
 
+    transition: all 0.2s linear;
+
+    &:after {
+        position  : absolute;
+        content   : "";
+        bottom    : -4px;
+        left      : 50%;
+        transform : translate3d(-50%; 0; 0);
+        width     : 0;
+        height    : 1px;
+        background: @grey-vio;
+        transition: all 0.2s linear;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+
+        &:after {
+            width: 100%;
+        }
+
+    }
+
     .screen820( {
             .flexGridElement(@grid: 1);
 
@@ -98,5 +121,11 @@
         font-size    : 12px;
         line-height  : 24px;
         margin-bottom: 35px;
+
+        .screen620( {
+                margin-bottom: 15px;
+            }
+
+        );
     }
 }
