@@ -4,13 +4,7 @@
 
 .readMe {
 
-    margin-bottom: 120px;
-
-    .screen620( {
-            margin-bottom: 30px;
-        }
-
-    );
+    margin-bottom: 80px;
 
     &__title {
         margin-bottom: 10px;
@@ -48,10 +42,28 @@
         float     : right;
         margin-top: 20px;
 
-        .screen620( {
-                margin-top: 0;
+        position: relative;
+        transition: all 0.2s linear;
+
+        &:after {
+            position  : absolute;
+            content   : "";
+            bottom    : -4px;
+            left      : 50%;
+            transform : translate3d(-50%; 0; 0);
+            width     : 0;
+            height    : 1px;
+            background: @grey-vio;
+            transition: all 0.2s linear;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+
+            &:after {
+                width: 100%;
             }
 
-        );
+        }
     }
 }

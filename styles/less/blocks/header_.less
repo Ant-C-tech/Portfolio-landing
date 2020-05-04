@@ -11,26 +11,29 @@
     .flex();
 
     .screen820( {
-        .btn{
-            display: none;
-        };
-    }
+            .btn {
+                display: none;
+            }
 
-);
+            ;
+        }
+
+    );
 
     .screen620( {
-        .flex(@direction: column, @wrap: nowrap);
-    }
+            flex-direction: column;
+            flex-wrap     : wrap;
+        }
 
-);
+    );
 
     &__menuContainer {
         margin: 0 30px;
 
         .screen440( {
-            margin: 0;
+                margin: 0;
             }
-    
+
         );
     }
 }

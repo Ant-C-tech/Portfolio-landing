@@ -1,7 +1,6 @@
 //main:../style.less
 
 .flex(@direction: row; @wrap: wrap; @justify: space-between; @align: center) {
-    display        : -webkit-box;
     display        : flex;
     flex-wrap      : @wrap;
     justify-content: @justify;
@@ -14,7 +13,10 @@
 }
 
 .flexContainer(@-margin-lr: -15px) {
-    margin     : 0 @-margin-lr;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left     : @-margin-lr;
+    margin-right     : @-margin-lr;
     align-items: stretch;
 }
 

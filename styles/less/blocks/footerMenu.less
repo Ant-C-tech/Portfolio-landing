@@ -1,0 +1,48 @@
+//main:footer.less
+
+.footerMenu {
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-family: 'Regular';
+    font-size  : 14px;
+    line-height: 1.15;
+    color      : @grey-exl-vio;
+
+    &__menuItem {
+        position: relative;
+        margin-right: 20px;
+
+        &:after {
+            position  : absolute;
+            content   : "";
+            bottom    : -8px;
+            left      : 50%;
+            transform : translate3d(-50%; 0; 0);
+            width     : 0;
+            height    : 2px;
+            background: @grey-exl-vio;
+            transition: all 0.2s linear;
+        }
+
+        &:hover,
+        &-active {
+            &:after {
+                width: 100%;
+            }
+
+        }
+    }
+
+    .flex(@justify: flex-end);
+    .flexGridElement(@gridMargin: 15px; @grid: 2);
+
+    .screen1200( {
+        .flex(@justify: center);
+        order: 1;
+        .flexGridElement(@gridMargin: 15px; @grid: 1; @align: stretch);
+        margin: 15px;
+    }
+);
+}

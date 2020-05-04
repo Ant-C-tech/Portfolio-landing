@@ -4,15 +4,15 @@
     margin-bottom: 140px;
 
     .screen820( {
-        margin-bottom: 15px;
-    }
+            margin-bottom: 15px;
+        }
 
-);
+    );
 
     &__wrapper {
-        .flex(@wrap                : wrap; @align: stretch);
+        .flex(@wrap : wrap; @align: stretch);
         .flexContainer();
-        margin-bottom              : 20px;
+        margin-bottom: 20px;
     }
 
 
@@ -25,10 +25,10 @@
         padding                     : 0 15px;
 
         .screen820( {
-                margin-bottom: 50px;
-                text-align   : center;
+                margin-bottom               : 50px;
+                text-align                  : center;
                 .flexGridElement(@gridMargin: 15px; @grid: 1; @align: stretch);
-                border-right: none;
+                border-right                : none;
             }
 
         );
@@ -41,10 +41,10 @@
     }
 
     &__subtitle {
-        font-family: 'Bold';
-        font-size  : 45px;
-        line-height: 1;
-        color      : @black;
+        font-family   : 'Bold';
+        font-size     : 45px;
+        line-height   : 1;
+        color         : @black;
         text-transform: uppercase;
 
         .screen1200( {
@@ -54,19 +54,19 @@
         );
 
         .screen440( {
-            font-size : 20px;
-        }
+                font-size : 20px;
+            }
 
-    );
+        );
     }
 
     &__title {
         margin: 15px 0 45px;
 
-        font-family: 'Bold';
-        font-size  : 92px;
-        line-height: 1;
-        color      : @light-grey;
+        font-family   : 'Bold';
+        font-size     : 92px;
+        line-height   : 1;
+        color         : @light-grey;
         text-transform: uppercase;
 
         .screen1200( {
@@ -76,10 +76,10 @@
         );
 
         .screen440( {
-            font-size : 40px;
-        }
+                font-size : 40px;
+            }
 
-    );
+        );
     }
 
     &__text {
@@ -98,19 +98,20 @@
     }
 
     &__buttons {
-        .flex(@justify: start );
+        .flex(@justify: start);
 
         .screen820( {
-            .flex(@justify: space-around);
-        }
+                .flex(@justify: space-around);
+            }
 
-    );
+        );
 
-        .screen620( {
-            .flex(@direction: column, @wrap: nowrap);
-        }
+            .screen620( {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
 
-    );
+        );
     }
 
     &__photoBlock {
@@ -120,9 +121,9 @@
 
         .screen820( {
                 .flexGridElement(@gridMargin: 15px; @grid: 1; @align: stretch);
-                .flex(@justify: space-around);
-                border-left: none;
-                margin-bottom: 30px;
+                .flex(@justify              : space-around);
+                border-left                 : none;
+                margin-bottom               : 30px;
             }
 
         );
@@ -132,8 +133,9 @@
         position: relative;
         overflow: hidden;
         order   : 0;
-        &:before{
-            content:"";
+
+        &:before {
+            content         : "";
             position        : absolute;
             bottom          : 0;
             right           : 8%;
