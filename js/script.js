@@ -1,13 +1,13 @@
 // Slick slider
-let slider = $("#testimonials");
+// let slider = $("#testimonials");
 
-slider.slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-});
+// slider.slick({
+//     infinite: true,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     arrows: false,
+//     autoplay: true,
+// });
 
 
 // Проверка поддержки атрибута loading браузерами
