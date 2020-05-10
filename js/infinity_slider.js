@@ -2,10 +2,8 @@ window.onload = () => {
 
     // Переменные
     let slider,
-        sliderContainer,
         slidesCollection,
         bodyWidth,
-        containerWidth,
         timerId,
         scrollDirection,
         sliderTop,
@@ -13,9 +11,8 @@ window.onload = () => {
         windowTop,
         windowBottom;
 
-    // Вводим счетчики
-    let positionCount = 0,
-        slideCount = 1;
+    // Вводим счетчик:
+    slideCount = 0;
 
 
 
@@ -24,36 +21,32 @@ window.onload = () => {
     //Присваиваем стили слайдеру и отслеживаем изменения размеров экрана:
     addStyles();
     sizeCalculator();
-    window.onresize = onresizeCalculator;
-
+    window.onresize = pauseOnresize;
     // Получаем текущее положение пользовательского экрана и блока слайдера (запуск слайдера при нахождении на экране):
     getCurrentPosition();
-    if ((windowBottom > sliderTop) && ((sliderTop + sliderContainer.offsetHeight) > windowTop) && (!timerId)) {
+    if ((windowBottom > sliderTop) && ((sliderTop + slider.offsetHeight) > windowTop) && (!timerId)) {
         sliderOn();
     }
-
     // Получаем направление скролла:
     document.onwheel = function (event) {
         scrollDirection = event.deltaY;
     }
-
     // Работа слайдера только в пределах пользовательского экрана при прокрутке:
     window.addEventListener('scroll', function () {
-
         getCurrentPosition();
 
         if (scrollDirection > 0) {
-            if ((windowBottom > sliderTop) && ((sliderTop + sliderContainer.offsetHeight) > windowTop) && (!timerId)) {
+            if ((windowBottom > sliderTop) && ((sliderTop + slider.offsetHeight) > windowTop) && (!timerId)) {
                 sliderOn();
             }
-            if (((sliderTop + sliderContainer.offsetHeight) < windowTop) && (timerId)) {
+            if (((sliderTop + slider.offsetHeight) < windowTop) && (timerId)) {
                 clearInterval(timerId);
                 timerId = false;
             }
         }
 
         if (scrollDirection < 0) {
-            if (((sliderTop + sliderContainer.offsetHeight) > windowTop) && (windowBottom > sliderTop) && (!timerId)) {
+            if (((sliderTop + slider.offsetHeight) > windowTop) && (windowBottom > sliderTop) && (!timerId)) {
                 sliderOn();
             }
             if ((windowBottom < sliderTop) && (timerId)) {
@@ -62,34 +55,42 @@ window.onload = () => {
             }
         }
     });
-
+    console.log(slider.onclick);
     //==============================================================================================================================================
 
     // Получаем элементы слайдера и добавляем необходимые стили:
     function addStyles() {
         slider = document.querySelector('.slider');
         slider.style.overflow = 'hidden';
-        slider.style.position = 'relative';
         slider.style.cursor = 'pointer';
-
-        sliderContainer = document.querySelector('.slider__container');
-        sliderContainer.style.position = 'absolute';
-        sliderContainer.style.left = '0';
-        sliderContainer.style.transition = 'all ease-in-out 0.5s';
-        sliderContainer.style.display = 'flex';
-        sliderContainer.style.flexWrap = 'nowrap';
+        slider.style.position = 'relative';
 
         slidesCollection = document.querySelectorAll('.slider__card');
         slidesCollection.forEach(element => element.style.width = "100%");
+        slidesCollection.forEach(element => element.style.position = 'absolute');
+        slidesCollection.forEach(element => element.style.left = '0');
+        slidesCollection.forEach(element => element.style.top = '0');
+        slidesCollection.forEach(element => element.style.transition = 'none');
     }
 
     // Расчитываем и назначаем расчетные стили отображения слайдера:
     function sizeCalculator() {
+        let slidesHeight = [];
+        for (let i = 0; i < slidesCollection.length; i++) {
+            slidesHeight[i] = slidesCollection[i].offsetHeight;
+        };
+        slider.style.height = getMaxOfArray(slidesHeight) + 'px';
         bodyWidth = document.querySelector('body').offsetWidth;
-        containerWidth = bodyWidth * slidesCollection.length;
-        sliderContainer.style.width = containerWidth + "px";
-        slider.style.height = (sliderContainer.offsetHeight) + 'px';
+        for (let i = 1; i < slidesCollection.length; i++) {
+            slidesCollection[i].style.left = bodyWidth + 'px';
+        };
     }
+
+    // Нахождение максимального числа в масиве:
+    function getMaxOfArray(numArray) {
+        return Math.max.apply(null, numArray);
+    }
+
 
     // Получаем текущее положение пользовательского экрана и блока слайдера:
     function getCurrentPosition() {
@@ -100,10 +101,11 @@ window.onload = () => {
     }
 
     // Пересчитываем и переназначаем стили отображения слайдера при измении размеров экрана:
-    function onresizeCalculator() {
+    function pauseOnresize() {
+        addStyles();
         sizeCalculator();
-        sliderContainer.style.left = "-" + ((slideCount - 1) * bodyWidth) + "px";
-        positionCount = -((slideCount - 1) * bodyWidth);
+        slideCount = 0;
+        slidesCollection[0].style.opacity = '1';
     }
 
     // Получаем координаты элемента относительно документа:
@@ -121,7 +123,9 @@ window.onload = () => {
         infinitySlider();
 
         // В процессе - отслеживаем клик и наведение мыши:
-        slider.onclick = sliderMove;
+
+        slider.onclick = sliderLeftMove;
+
         slider.onmouseover = () => {
             clearInterval(timerId);
         }
@@ -132,26 +136,56 @@ window.onload = () => {
 
         // Запускаем бесконечный слайдер:
         function infinitySlider() {
-            timerId = setInterval(() => sliderMove(), 2000);
-        }
-
-        // По клику запускаем перелистывание, отслеживаем текущее положение
-        // слайдера и граничные условия:
-        function sliderMove() {
-            if (slideCount < slidesCollection.length) {
-                sliderLeftMove();
-            } else {
-                sliderContainer.style.left = 0;
-                slideCount = 1;
-                positionCount = 0;
-            }
+            timerId = setInterval(() => sliderLeftMove(), 2000);
         }
 
         // Выполняем перелистывание слайдера влево
         function sliderLeftMove() {
-            positionCount = (positionCount - bodyWidth);
-            sliderContainer.style.left = positionCount + "px";
-            slideCount++;
+
+            // Запрещаем бастрое прокликивание:
+            slider.onclick = null;
+            setTimeout(() => {
+                slider.onclick = sliderLeftMove;
+            }, 500);
+
+            if (slideCount == 0) {
+                slidesCollection[slidesCollection.length - 1].style.opacity = '0';
+                slidesCollection[slidesCollection.length - 1].style.left = bodyWidth + 'px';
+
+                slidesCollection.forEach(element => element.style.transition = 'left ease-in-out 0.5s');
+                slidesCollection[0].style.left = -bodyWidth + 'px';
+                slidesCollection[1].style.opacity = '1';
+                slidesCollection[1].style.left = 0 + 'px';
+                slideCount++;
+                return false;
+            }
+
+            if ((0 < slideCount) && (slideCount < (slidesCollection.length - 1))) {
+                slidesCollection[slideCount - 1].style.opacity = '0';
+                slidesCollection[slideCount - 1].style.left = bodyWidth + 'px';
+
+                slidesCollection[slideCount].style.left = -bodyWidth + 'px';
+
+                slidesCollection[slideCount + 1].style.transition = 'left ease-in-out 0.5s';
+                slidesCollection[slideCount + 1].style.opacity = '1';
+                slidesCollection[slideCount + 1].style.left = 0 + 'px';
+
+                slideCount++;
+                return false;
+            }
+
+            if (slideCount == (slidesCollection.length - 1)) {
+                slidesCollection[slideCount - 1].style.opacity = '0';
+                slidesCollection[slideCount - 1].style.left = bodyWidth + 'px';
+
+                slidesCollection[slideCount].style.left = -bodyWidth + 'px';
+
+                slidesCollection[0].style.opacity = '1';
+                slidesCollection[0].style.left = 0 + 'px';
+                slideCount = 0;
+                return false;
+            }
+
         }
 
     }
