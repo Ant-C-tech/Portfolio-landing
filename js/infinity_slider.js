@@ -25,6 +25,11 @@ getCurrentPosition();
 if ((windowBottom > sliderTop) && ((sliderTop + slider.offsetHeight) > windowTop) && (!timerId)) {
     sliderOn();
 }
+//Для мобильных устройств запускаем слайдер сразу:
+if (bodyWidth < 1100){
+    sliderOn();
+}
+
 // Получаем направление скролла:
 document.onwheel = function (event) {
     scrollDirection = event.deltaY;
@@ -88,6 +93,13 @@ function getMaxOfArray(numArray) {
     return Math.max.apply(null, numArray);
 }
 
+// Пересчитываем и переназначаем стили отображения слайдера при измении размеров экрана:
+function pauseOnresize() {
+    addStyles();
+    sizeCalculator();
+    slideCount = 0;
+    slidesCollection[0].style.opacity = '1';
+}
 
 // Получаем текущее положение пользовательского экрана и блока слайдера:
 function getCurrentPosition() {
@@ -95,14 +107,6 @@ function getCurrentPosition() {
     windowHeight = document.documentElement.clientHeight;
     windowTop = pageYOffset;
     windowBottom = windowTop + windowHeight;
-}
-
-// Пересчитываем и переназначаем стили отображения слайдера при измении размеров экрана:
-function pauseOnresize() {
-    addStyles();
-    sizeCalculator();
-    slideCount = 0;
-    slidesCollection[0].style.opacity = '1';
 }
 
 // Получаем координаты элемента относительно документа:
