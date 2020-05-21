@@ -152,5 +152,14 @@
         position   : relative;
         z-index    : 10;
         width      : 100%;
+        left  : 0;
+        transition: all 0.5s ease-in-out;
+        filter: grayscale(40%);
+
+        &:hover {
+            filter: grayscale(0);
+            left  : 3%;
+        }
+
     }
 }

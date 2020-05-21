@@ -26,7 +26,7 @@ if ((windowBottom > sliderTop) && ((sliderTop + slider.offsetHeight) > windowTop
     sliderOn();
 }
 //Для мобильных устройств запускаем слайдер сразу:
-if (bodyWidth < 1100){
+if (bodyWidth < 1100) {
     sliderOn();
 }
 

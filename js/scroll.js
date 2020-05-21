@@ -1,4 +1,4 @@
-window.onload = function () {
+// window.onload = function () {
 
     const stepTime = 5, // Время шага прокрутки;
         scrollTime = 700; //Время прокрутки;
@@ -68,4 +68,4 @@ window.onload = function () {
         };
     }
 
-}
+// }

@@ -87,9 +87,10 @@
                     </div>
                 </div>
                 <div class="intro__photoBlock">
-                    <img class="intro__bgPic lazyload" loading="lazy" data-src="img/intro/bg.png" alt="background image">
-                    <img class="intro__pic lazyload" loading="lazy" 
-                    data-src="img/intro/author_.webp" alt="author photo" type="image/webp">
+                    <img class="intro__bgPic lazyload" loading="lazy" data-src="img/intro/bg.png"
+                        alt="background image">
+                    <img class="intro__pic lazyload" loading="lazy" data-src="img/intro/author_.webp" alt="author photo"
+                        type="image/webp">
                 </div>
             </div>
         </div>
@@ -108,7 +109,7 @@
 
                 <div class="card">
                     <div class="card__photo">
-                        <a href="#" class="card__link">
+                        <a href="https://ant-c-tech.github.io/mogo-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj1.webp"
                                 type="image/webp" alt="project main page photo">
                         </a>
@@ -124,7 +125,7 @@
 
                 <div class="card">
                     <div class="card__photo">
-                        <a href="#" class="card__link">
+                        <a href="https://ant-c-tech.github.io/piroll-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj2.webp"
                                 type="image/webp" alt="project main page photo">
                         </a>
@@ -140,7 +141,7 @@
 
                 <div class="card">
                     <div class="card__photo">
-                        <a href="#" class="card__link">
+                        <a href="https://ant-c-tech.github.io/activeBox-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj3.webp"
                                 type="image/webp" alt="project main page photo">
                         </a>
@@ -172,7 +173,7 @@
 
                 <div class="card">
                     <div class="card__photo">
-                        <a href="#" class="card__link">
+                        <a href="https://ant-c-tech.github.io/Campp-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj5.webp"
                                 type="image/webp" alt="project main page photo">
                         </a>
@@ -252,7 +253,7 @@
 
             </div>
             <!--/*works__wrapper -->
-            <a href="#" class="btn btn-big">LOAD MORE WORK</a>
+            <p class="btn btn-big btn-modalButton">LOAD MORE WORK</p>
         </div>
         <!--/*container -->
     </div>
@@ -539,12 +540,88 @@
     </footer>
     <!-- /Footer -->
 
+    <!-- Modals -->
+    <div class="modalMask"></div>
+
+    <div class="modalWindow" id="modalWindow-Projects">
+
+        <div class="modalProjects">
+
+            <div class="modalProjects__iframeBlock">
+
+                <iframe class="modalProjects__iframe" src="https://ant-c-tech.github.io/mogo-landing/"
+                    frameborder="0"></iframe>
+
+                <iframe class="modalProjects__iframe" src="https://ant-c-tech.github.io/piroll-landing/"
+                    frameborder="0"></iframe>
+
+                <iframe class="modalProjects__iframe" src="https://ant-c-tech.github.io/activeBox-landing/"
+                    frameborder="0"></iframe>
+
+                <iframe class="modalProjects__iframe" src="https://ant-c-tech.github.io/Campp-landing/"
+                    frameborder="0"></iframe>
+                    
+            </div>
+
+            <div class="modalProjects__textPart">
+                <div class="modalProjects__wrapper">
+                    <div class="modalWindow__closeButton">
+                        <div class="modalWindow__btnWrapper">
+                            <span class="modalWindow__btnGraph modalWindow__btnGraph-h"></span>
+                            <span class="modalWindow__btnGraph modalWindow__btnGraph-v"></span>
+                        </div>
+                    </div>
+
+                    <h3 class="modalProjects__title">PROJECT TITLE</h3>
+                    <p class="modalProjects__subtitle">
+                        <span class="modalProjects__category">CATEGORY</span>
+                        2018
+                    </p>
+                    <h4 class="modalProjects__client">Client:</h4>
+                    <p class="modalProjects__clientTitle">Creative Agency</p>
+                    <p class="modalProjects__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                        pellentesque eu enim eget luctus.
+                        Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem,
+                        elementum consequat est consequat eu. Quisque aliquet a ipsum nec tincidunt. Nulla vitae rhoncus
+                        leo. Praesent dui sapien, bibendum quis tempus dictum, auctor ac dui. Vestibulum ante ipsum
+                        primis
+                        in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at mauris porta, ullamcorper
+                        sem
+                        quis, lobortis sem. Donec sit amet aliquet dui, at varius est. Phasellus porttitor finibus neque
+                        vel
+                        vehicula. Duis in nulla egestas, dignissim elit at, imperdiet eros. Integer tristique posuere
+                        purus.
+                        Suspendisse placerat, quam vitae ullamcorper sollicitudin, dui ligula molestie massa, sit amet
+                        laoreet nibh ex vitae dui. Aenean laoreet pellentesque lacus, eget varius massa mattis quis.
+                        Nunc
+                        ultrices urna eu nunc lobortis pulvinar. Duis viverra, quam non imperdiet scelerisque, urna nunc
+                        consequat velit, in mollis erat nibh in libero.
+                    </p>
+                </div>
+
+                <div class="modalProjects__controlPart">
+                    <div class="modalProjects__controlButon modalProjects__controlButon-prev"><span
+                            class="modalProjects__arrow">&#60</span>PREVIOUS
+                    </div>
+                    <div class="modalProjects__controlButon modalProjects__controlButon-next">NEXT <span
+                            class="modalProjects__arrow">&#62</span></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- \Modals -->
+
+
     <!-- Scripts -->
 
-    
+    <script src="js/lazyload.js"></script>
     <script src="js/infinity_slider.js"></script>
     <script src="js/scroll.js"></script>
-    <script src="js/lazyload.js"></script>
+    <script src="js/show_modal.js"></script>
+    <script src="js/modal_projects.js"></script>
+    <script src="js/modal_slider.js"></script>
 
 
 
