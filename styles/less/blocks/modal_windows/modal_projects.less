@@ -9,7 +9,7 @@
         align-self: flex-start;
         position  : relative;
         background: @white;
-        overflow: hidden;
+        overflow  : hidden;
 
         .screen830( {
                 width: 60%;
@@ -45,6 +45,17 @@
 
     &__wrapper {
         width: 100%;
+    }
+
+    &__descriptionWrapper {
+        position: relative;
+    }
+
+    &__descriptionCard{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform ease-in-out 0.5s;
     }
 
     &__title {
