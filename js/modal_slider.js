@@ -3,7 +3,6 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
     //Получаем необходимые элементы документа:
     let prevButton = document.querySelector('.modalProjects__controlButon-prev'),
         nextButton = document.querySelector('.modalProjects__controlButon-next'),
-        modalSlider = document.querySelectorAll('.modalProjects__iframeBlock'),
         ifraimSlidesCollection = document.querySelectorAll('.modalProjects__iframe'),
         descriptionSlidesCollection = document.querySelectorAll('.modalProjects__descriptionCard'),
         iframeBlockWidth;
