@@ -30,6 +30,35 @@
         transition: left ease-in-out 0.5s;
     }
 
+    &__sliderVisualPanel {
+        position        : absolute;
+        bottom          : 55px;
+        left: -250px;
+        background: @light-grey;
+        border-radius: 7px;
+        transform: translate3d(-50%; 0; 0);
+        transition      : all ease-in-out 0.5s;
+
+
+        .flex(@justify: center);
+
+    }
+
+    &__visualPanelItem {
+        width        : 8px;
+        height       : 8px;
+        border       : 1px solid @black;
+        border-radius: 50%;
+        margin       : 3px 10px;
+        transition   : all ease-in-out 0.5s;
+
+
+
+        &-active {
+            background: @black;
+        }
+    }
+
     &__textPart {
         width           : 34.5%;
         .flex(@direction: column; @wrap: nowrap; @align: flex-start);

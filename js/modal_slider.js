@@ -3,18 +3,27 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
     //Получаем необходимые элементы документа:
     let prevButton = document.querySelector('.modalProjects__controlButon-prev'),
         nextButton = document.querySelector('.modalProjects__controlButon-next'),
+        sliderVisualPanel = document.querySelector('.modalProjects__sliderVisualPanel'),
         ifraimSlidesCollection = document.querySelectorAll('.modalProjects__iframe'),
         descriptionSlidesCollection = document.querySelectorAll('.modalProjects__descriptionCard'),
-        iframeBlockWidth;
+        iframeBlockWidth,
+        visualPanelCollection,
+        firstTimeOutID,
+        nextTimeOutID;
 
     // Вводим счетчик:
     ifraimSlidesCount = 0;
 
-    //Подготовительное позиционирование слайдов
+    //Подготовительное позиционирование слайдов:
     modalSliderPositionCalc();
-    //Пересчет позиционирования при изминении ориентации экрана
+    //Создание навигационной панели слайдера:
+    createSliderVisualPanel();
+
+
+    //Пересчет позиционирования и обновление элементов слайдера при изминении ориентации экрана:
     window.addEventListener('resize', function (event) {
         modalSliderPositionCalc();
+        updateSliderVisualPanel();
         ifraimSlidesCount = 0;
         ifraimSlidesCollection.forEach(element => element.style.opacity = '1');
         ifraimSlidesCollection[0].style.left = 0 + 'px';
@@ -35,6 +44,51 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
         ifraimSlidesCollection[ifraimSlidesCollection.length - 1].style.left = -iframeBlockWidth + 'px';
         descriptionSlidesCollection.forEach(element => element.style.transform = 'rotate3d(0, 1, 0, 90deg)');
         descriptionSlidesCollection[0].style.transform = 'rotate3d(0, 1, 0, 0deg)';
+    }
+
+    function createSliderVisualPanel() {
+        //Visualpanel
+        for (let i = 0; i < ifraimSlidesCollection.length; i++) {
+            let newDiv = document.createElement('div');
+            newDiv.className = ('modalProjects__visualPanelItem');
+            if (i == ifraimSlidesCount) {
+                newDiv.classList.add("modalProjects__visualPanelItem-active");
+            }
+            sliderVisualPanel.append(newDiv);
+        };
+        setTimeout(() => {
+            sliderVisualPanel.style.left = '50%';
+        }, 500);
+        firstTimeOutID = setTimeout(() => {
+            sliderVisualPanel.style.left = '-250px';
+        }, 3000);
+    }
+
+    function updateSliderVisualPanel() {
+        if (sliderVisualPanel.style.left == '-250px') {
+            setTimeout(() => {
+                sliderVisualPanel.style.left = '50%';
+            }, 500);
+            nextTimeOutID = setTimeout(() => {
+                sliderVisualPanel.style.left = '-250px';
+            }, 3000);
+        } else {
+            clearTimeout(firstTimeOutID);
+            clearTimeout(nextTimeOutID);
+            nextTimeOutID = setTimeout(() => {
+                sliderVisualPanel.style.left = '-250px';
+            }, 3000);
+        }
+
+        visualPanelCollection = document.querySelectorAll('.modalProjects__visualPanelItem');
+        visualPanelCollection.forEach(element => element.classList.remove("modalProjects__visualPanelItem-active"));
+        setTimeout(() => {
+            for (let i = 0; i < visualPanelCollection.length; i++) {
+                if (i == ifraimSlidesCount) {
+                    visualPanelCollection[i].classList.add("modalProjects__visualPanelItem-active");
+                };
+            }
+        }, 600);
     }
 
     function nextSlide() {
@@ -89,6 +143,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
                 ifraimSlidesCount++;
             }, 500);
         }
+        updateSliderVisualPanel();
     }
 
     function prevSlide() {
@@ -142,6 +197,6 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
                 ifraimSlidesCount--;
             }, 500);
         }
+        updateSliderVisualPanel();
     }
-
 });
