@@ -16,23 +16,41 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
 
     //Подготовительное позиционирование слайдов:
     modalSliderPositionCalc();
+
     //Создание навигационной панели слайдера:
     createSliderVisualPanel();
 
-
     //Пересчет позиционирования и обновление элементов слайдера при изминении ориентации экрана:
     window.addEventListener('resize', function (event) {
+        ifraimSlidesCount = 0;
         modalSliderPositionCalc();
         updateSliderVisualPanel();
-        ifraimSlidesCount = 0;
         ifraimSlidesCollection.forEach(element => element.style.opacity = '1');
         ifraimSlidesCollection[0].style.left = 0 + 'px';
         descriptionSlidesCollection.forEach(element => element.style.transform = 'rotate3d(0, 1, 0, 90deg)');
         descriptionSlidesCollection[0].style.transform = 'rotate3d(0, 1, 0, 0deg)';
     });
+
+    //Управление слайдером по кнопкам:
     nextButton.addEventListener("click", nextSlide);
     prevButton.addEventListener("click", prevSlide);
 
+    //Закрываем модальное окно:
+    document.querySelector('.modalWindow__closeButton').addEventListener("click", function () {
+        //Сброс навигационной панели слайдера:
+        removeElements = document.querySelectorAll(".modalProjects__visualPanelItem");
+        for (let i = 0; i < removeElements.length; i++){
+            removeElements[i].remove();
+        }
+        //Сброс слайдера:
+        ifraimSlidesCount = 0;
+        ifraimSlidesCollection.forEach(element => element.style.opacity = '1');
+        ifraimSlidesCollection[0].style.left = 0 + 'px';
+        descriptionSlidesCollection.forEach(element => element.style.transform = 'rotate3d(0, 1, 0, 90deg)');
+        descriptionSlidesCollection[0].style.transform = 'rotate3d(0, 1, 0, 0deg)';
+        nextButton.removeEventListener("click", nextSlide);
+        prevButton.removeEventListener("click", prevSlide);
+    });
 
 
     //Функции
@@ -49,13 +67,14 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
     function createSliderVisualPanel() {
         //Visualpanel
         for (let i = 0; i < ifraimSlidesCollection.length; i++) {
-            let newDiv = document.createElement('div');
-            newDiv.className = ('modalProjects__visualPanelItem');
+            let visualPanelPoint = document.createElement('div');
+            visualPanelPoint.className = ('modalProjects__visualPanelItem');
             if (i == ifraimSlidesCount) {
-                newDiv.classList.add("modalProjects__visualPanelItem-active");
+                visualPanelPoint.classList.add("modalProjects__visualPanelItem-active");
             }
-            sliderVisualPanel.append(newDiv);
+            sliderVisualPanel.append(visualPanelPoint);
         };
+        //Алгоритм работы навигационной панели:
         setTimeout(() => {
             sliderVisualPanel.style.left = '50%';
         }, 500);
@@ -65,6 +84,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
     }
 
     function updateSliderVisualPanel() {
+        //Алгоритм работы навигационной панели:
         if (sliderVisualPanel.style.left == '-250px') {
             setTimeout(() => {
                 sliderVisualPanel.style.left = '50%';
@@ -79,7 +99,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
                 sliderVisualPanel.style.left = '-250px';
             }, 3000);
         }
-
+        //Обновление навигационной панели:
         visualPanelCollection = document.querySelectorAll('.modalProjects__visualPanelItem');
         visualPanelCollection.forEach(element => element.classList.remove("modalProjects__visualPanelItem-active"));
         setTimeout(() => {
@@ -110,7 +130,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
             descriptionSlidesCollection[ifraimSlidesCount].style.transform = 'rotate3d(0, 1, 0, 90deg)';
             setTimeout(() => {
                 descriptionSlidesCollection[ifraimSlidesCount + 1].style.transform = 'rotate3d(0, 1, 0, 0deg)';
-                ifraimSlidesCount++;
+                ifraimSlidesCount = ifraimSlidesCount + 1;
             }, 500);
         } else if (ifraimSlidesCount == (ifraimSlidesCollection.length - 1)) {
             ifraimSlidesCollection[ifraimSlidesCount - 1].style.opacity = '0';
@@ -140,7 +160,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
             descriptionSlidesCollection[ifraimSlidesCount].style.transform = 'rotate3d(0, 1, 0, 90deg)';
             setTimeout(() => {
                 descriptionSlidesCollection[ifraimSlidesCount + 1].style.transform = 'rotate3d(0, 1, 0, 0deg)';
-                ifraimSlidesCount++;
+                ifraimSlidesCount = ifraimSlidesCount + 1;
             }, 500);
         }
         updateSliderVisualPanel();
@@ -179,7 +199,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
             descriptionSlidesCollection[ifraimSlidesCount].style.transform = 'rotate3d(0, 1, 0, 90deg)';
             setTimeout(() => {
                 descriptionSlidesCollection[ifraimSlidesCount - 1].style.transform = 'rotate3d(0, 1, 0, 0deg)';
-                ifraimSlidesCount--;
+                ifraimSlidesCount = ifraimSlidesCount - 1;
             }, 500);
         } else {
             ifraimSlidesCollection[ifraimSlidesCount - 2].style.opacity = '0';
@@ -194,7 +214,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
             descriptionSlidesCollection[ifraimSlidesCount].style.transform = 'rotate3d(0, 1, 0, 90deg)';
             setTimeout(() => {
                 descriptionSlidesCollection[ifraimSlidesCount - 1].style.transform = 'rotate3d(0, 1, 0, 0deg)';
-                ifraimSlidesCount--;
+                ifraimSlidesCount = ifraimSlidesCount - 1;
             }, 500);
         }
         updateSliderVisualPanel();

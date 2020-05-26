@@ -6,7 +6,7 @@ document.querySelector('.btn-modalButton').addEventListener("click", function ()
     let modalProjects = document.querySelector('.modalProjects');
     let iFrame = document.querySelector('.modalProjects__iframeBlock');
     let textPart = document.querySelector('.modalProjects__textPart');
-    let wrapper = document.querySelector('.modalProjects__wrapper');
+    // let wrapper = document.querySelector('.modalProjects__wrapper');
     let textBlock = document.querySelectorAll('.modalProjects__text');
 
     //Назначаем свойства в зависимости от размеров пользовательского экрана и его ориентации:
