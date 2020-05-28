@@ -1,39 +1,66 @@
 // window.onload = function () {
 
-// Размеры модального окна по заданию:
-const modalWindowWidth = 1200,
-    modalWindowHeight = 775;
+// Размеры модального окна по атрибуту кнопки:
+let modalWindowWidth,
+    modalWindowHeight,
+    modalWindowcontent;
 
 //Получаем размеры пользовательского окна:
 let windowWidth = document.documentElement.clientWidth;
 // let windowHeight = document.documentElement.clientHeight;!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //Получаем необходимые элементы документа:
-let modalWindow = document.querySelector('.modalWindow');
+
+let modalWindow;
 let body = document.querySelector('body');
 let modalMask = document.querySelector('.modalMask');
-let btnWindowClose = document.querySelector('.modalWindow__closeButton');
-let hline = document.querySelector('.modalWindow__btnGraph-h');
-let vline = document.querySelector('.modalWindow__btnGraph-v');
+let btnWindowCloseCollection = document.querySelectorAll('.modalWindow__closeButton');
 
-//"Слушаем" событие клик на кнопке:
-document.querySelector('.btn-modalButton').addEventListener("click", function () {
+let hlineCollection = document.querySelectorAll('.modalWindow__btnGraph-h');
+let vlineCollection = document.querySelectorAll('.modalWindow__btnGraph-v');
 
-    //Включение модальной маски:
-    body.style.overflow = "hidden";
-    modalMask.style.display = "flex";
-    setTimeout(() => {
-        modalMask.style.opacity = "0.7"
-    }, 100);
+let btnShowModalCollection = document.querySelectorAll('.btn-modalButton');
 
-    //Обнуляем свойства кнопки закрытия окна:
-    hline.style.width = '';
-    vline.style.height = '';
+//"Слушаем" событие клик на кнопках показ модальных окон:
+for (let i = 0; i < btnShowModalCollection.length; i++) {
+    btnShowModalCollection[i].addEventListener("click", function () {
 
-    //Расчитываем размеры модального окна, положение модального окна, показываем пользователю модальное окно:
-    modalWindowParam();
+        //Включение модальной маски:
+        body.style.overflow = "hidden";
+        modalMask.style.display = "flex";
+        setTimeout(() => {
+            modalMask.style.opacity = "0.7"
+        }, 100);
 
-});
+        //Обнуляем свойства кнопки закрытия окна:
+        for (let i = 0; i < hlineCollection.length; i++) {
+            hlineCollection[i].style.width = '';
+        }
+        for (let i = 0; i < vlineCollection.length; i++) {
+            vlineCollection[i].style.height = '';
+        }
+
+        //Получаем атрибуты модального окна:
+        modalWindowWidth = getAttributeWidth(event);
+        modalWindowHeight = getAttributeHeight(event);
+        modalWindowcontent = getAttributeContent(event);
+
+        //Выбираем контент модального окна:
+        if (modalWindowcontent == 'projects') {
+            modalWindow = document.querySelector('#modalWindow-Projects');
+        } else if (modalWindowcontent == 'resume') {
+            modalWindow = document.querySelector('#modalWindow-Resume');
+        } else {
+            modalWindow = document.querySelector('#modalWindow-Hire');
+        }
+
+
+
+        //Расчитываем размеры модального окна, положение модального окна, показываем пользователю модальное окно:
+        modalWindowParam();
+
+    });
+}
 
 //Пересчитываем свойства модального окна при смене ориентации экрана:
 window.addEventListener('resize', function (event) {
@@ -44,23 +71,42 @@ window.addEventListener('resize', function (event) {
 });
 
 //Закрываем модальное окно по клику:
-btnWindowClose.addEventListener("click", function () {
+for (let i = 0; i < btnWindowCloseCollection.length; i++) {
+    btnWindowCloseCollection[i].addEventListener("click", function () {
 
-    //Анимация кнопки закрытия окна:
-    hline.style.width = 0;
-    vline.style.height = 0;
+        //Анимация кнопки закрытия окна:
+        for (let i = 0; i < hlineCollection.length; i++) {
+            hlineCollection[i].style.width = 0;
+        }
+        for (let i = 0; i < vlineCollection.length; i++) {
+            vlineCollection[i].style.height = 0;
+        }
 
-    setTimeout(() => {
-        modalWindow.style.bottom = -3000 + 'px';
-    }, 300);
-    setTimeout(() => {
-        modalMask.style.opacity = "0";
-    }, 500);
-    setTimeout(() => {
-        modalMask.style.display = "none";
-    }, 1000);
-    body.style.overflow = "visible";
-});
+        setTimeout(() => {
+            modalWindow.style.bottom = -3000 + 'px';
+        }, 300);
+        setTimeout(() => {
+            modalMask.style.opacity = "0";
+        }, 500);
+        setTimeout(() => {
+            modalMask.style.display = "none";
+        }, 1000);
+        body.style.overflow = "visible";
+    });
+}
+
+//Функции
+function getAttributeWidth(event) {
+    return event.target.getAttribute('data-width');
+}
+
+function getAttributeHeight(event) {
+    return event.target.getAttribute('data-height');
+}
+
+function getAttributeContent(event) {
+    return event.target.getAttribute('data-modal');
+}
 
 function modalWindowParam() {
 

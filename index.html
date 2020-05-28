@@ -43,7 +43,8 @@
                         <a class="menu__menuItem" href="#">CONTACT</a>
                     </div>
                 </div>
-                <a href="#" class="btn">HIRE ME</a>
+                <p class="btn btn-modalButton" data-width="900" data-height="675" data-modal="hireMe">HIRE
+                    ME</p>
             </div>
     </header>
 
@@ -82,8 +83,10 @@
                         </a>
                     </div>
                     <div class="intro__buttons">
-                        <a href="#" class="btn btn-middleThin">HIRE ME</a>
-                        <a href="#" class="btn btn-bigThin">SEE MY RESUME</a>
+                        <p class="btn btn-middleThin btn-modalButton" data-width="900" data-height="675"
+                            data-modal="hireMe">HIRE ME</p>
+                        <p class="btn btn-bigThin btn-modalButton" data-width="1200" data-height="1240"
+                            data-modal="resume">SEE MY RESUME</p>
                     </div>
                 </div>
                 <div class="intro__photoBlock">
@@ -253,7 +256,8 @@
 
             </div>
             <!--/*works__wrapper -->
-            <p class="btn btn-big btn-modalButton">LOAD MORE WORK</p>
+            <p class="btn btn-big btn-modalButton btn-showModalProjects" data-width="1200" data-height="775"
+                data-modal="projects">LOAD MORE WORK</p>
         </div>
         <!--/*container -->
     </div>
@@ -279,8 +283,10 @@
                         Duis viverra, quam non imperdiet scelerisque, urna nunc consequat velit, in mollis erat nibh in
                         libero.</p>
                     <div class="about__buttons">
-                        <a href="#" class="btn btn-middleThin">HIRE ME</a>
-                        <a href="#" class="btn btn-bigThin">SEE MY RESUME</a>
+                        <p class="btn btn-middleThin btn-modalButton" data-width="900" data-height="675"
+                            data-modal="hireMe">HIRE ME</p>
+                        <p class="btn btn-bigThin btn-modalButton" data-width="1200" data-height="1240"
+                            data-modal="resume">SEE MY RESUME</p>
                     </div>
                 </div>
                 <div class="about__photoBlock">
@@ -533,7 +539,8 @@
                     <a class="footerMenu__menuItem scroll__bottomButton" href="#">About Me</a>
                     <a class="footerMenu__menuItem" href="https://www.twitter.com/">Blog</a>
                     <a class="footerMenu__menuItem" href="#">Contact</a>
-                    <a href="#" class="btn-footer">HIRE ME</a>
+                    <p class="btn-footer btn-modalButton" data-width="900" data-height="675" data-modal="hireMe">HIRE ME
+                    </p>
                 </div>
             </div>
         </div>
@@ -729,16 +736,108 @@
 
         </div>
     </div>
+
+    <div class="modalWindow" id="modalWindow-Resume">
+
+        <div class="modalResume">
+            <div class="modalWindow__closeButton">
+                <div class="modalWindow__btnWrapper">
+                    <span class="modalWindow__btnGraph modalWindow__btnGraph-h"></span>
+                    <span class="modalWindow__btnGraph modalWindow__btnGraph-v"></span>
+                </div>
+            </div>
+
+            <h3 class="modalResume__title">RESUME</h3>
+            <div class="modalResume__buttons">
+                <p class="btn btn-middleThin btn-middleThin-resume">DOWNLOAD PDF</p>
+                <p class="btn btn-middleThin btn-middleThin-resume">PRINT</p>
+            </div>
+            <div class="modalResume__content">
+                <div class="modalResume__experience">
+                    <h4 class="modalResume__contentTitle">EXPERIENCE</h4>
+
+                    <div class="modalResume__work">
+                        <p class="modalResume__period">2017 - <span>Present</span></p>
+                        <h5 class="modalResume__workTitle">Freelancer</h5>
+                        <h6 class="modalResume__workSubtitle">Art Director</h6>
+                        <p class="modalResume__workText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam lobortis felis non tempor
+                            ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut
+                            condimentum.</p>
+                    </div>
+
+                    <div class="modalResume__work">
+                        <p class="modalResume__period">2016 - 2017</p>
+                        <h5 class="modalResume__workTitle">The Best Agency</h5>
+                        <h6 class="modalResume__workSubtitle">Art Director</h6>
+                        <p class="modalResume__workText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam lobortis felis non tempor
+                            ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut
+                            condimentum.</p>
+                    </div>
+
+                    <div class="modalResume__work">
+                        <p class="modalResume__period">2014 - 2016</p>
+                        <h5 class="modalResume__workTitle">Better Agency</h5>
+                        <h6 class="modalResume__workSubtitle">Senior UI/UX Designer</h6>
+                        <p class="modalResume__workText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam lobortis felis non tempor
+                            ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut
+                            condimentum.</p>
+                    </div>
+
+                    <div class="modalResume__work">
+                        <p class="modalResume__period">2012 - 2014</p>
+                        <h5 class="modalResume__workTitle">Good Agency</h5>
+                        <h6 class="modalResume__workSubtitle">UI/UX Designer</h6>
+                        <p class="modalResume__workText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aliquam lobortis felis non tempor
+                            ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut
+                            condimentum.</p>
+                    </div>
+
+                </div>
+
+                <div class="modalResume__education">
+                    <h4 class="modalResume__contentTitle">EDUCATION</h4>
+
+                    <div class="modalResume__work">
+                        <p class="modalResume__period-edu">2005 - 2010</p>
+                        <h5 class="modalResume__workTitle-edu">UI/UX Design</h5>
+                        <h6 class="modalResume__workSubtitle-edu">LA University, USA</h6>
+                    </div>
+
+                    <div class="modalResume__work">
+                        <p class="modalResume__period-edu">2002 - 2005</p>
+                        <h5 class="modalResume__workTitle-edu">UI/UX Design</h5>
+                        <h6 class="modalResume__workSubtitle-edu">LA Collage of Art, USA</h6>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="btn btn-middleThin btn-modalButton" data-width="900" data-height="675" data-modal="hireMe">HIRE ME
+            </p>
+        </div>
+    </div>
+
+    <div class="modalWindow" id="modalWindow-Hire">
+        <div class="modalWindow__closeButton">
+            <div class="modalWindow__btnWrapper">
+                <span class="modalWindow__btnGraph modalWindow__btnGraph-h"></span>
+                <span class="modalWindow__btnGraph modalWindow__btnGraph-v"></span>
+            </div>
+        </div>
+    </div>
     <!-- \Modals -->
 
 
     <!-- Scripts -->
-
     <script src="js/lazyload.js"></script>
     <script src="js/infinity_slider.js"></script>
     <script src="js/scroll.js"></script>
     <script src="js/show_modal.js"></script>
-    <script src="js/modal_projects.js"></script>
+    <script src="js/modal_projects.js"></script> -->
     <script src="js/modal_slider.js"></script>
 
 

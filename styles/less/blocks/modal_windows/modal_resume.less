@@ -1,0 +1,139 @@
+//main:../../../style.less
+
+.modalResume {
+
+    margin           : 15px;
+
+    .flex(@direction : column; @justify: space-around; @wrap: nowrap; );
+
+    &__title {
+        font-family   : bold;
+        font-size     : 45px;
+        color         : @black;
+        line-height   : 1.4;
+        text-transform: uppercase;
+
+        text-align   : center;
+        margin-top   : 10px;
+        margin-bottom: 15px;
+    }
+
+    &__buttons {
+        .flex(@justify: center; );
+
+        margin   : 0 auto 25px;
+        max-width: 400px;
+    }
+
+    &__content {
+        .flex();
+        .flexContainer(@-margin-lr: -45px);
+
+        max-width: 860px;
+        margin   : 0 auto;
+        padding  : 0 15px;
+    }
+
+    &__contentTitle {
+        font-family   : bold;
+        font-size     : 18px;
+        color         : @black;
+        line-height   : 1.4;
+        text-transform: uppercase;
+        margin-bottom : 20px;
+    }
+
+    &__experience {
+        .flexGridElement(@gridMargin: 45px; @grid: 2; );
+        .flex(@direction            : column; @align: flex-end; @justify: space-around; );
+
+        position: relative;
+
+        &:after {
+            position  : absolute;
+            content   : "";
+            right     : -45px;
+            top       : 0;
+            width     : 1px;
+            height    : 100%;
+            background: @grey-vio;
+        }
+
+    }
+
+    &__work {
+        margin-bottom: 20px;
+    }
+
+    &__period {
+        text-align     : right;
+        text-decoration: underline;
+        font-family    : regular;
+        font-size      : 14px;
+        color          : @black;
+        line-height    : 1.5;
+
+        margin-bottom: 12px;
+
+        & span {
+            font-family: bold;
+        }
+
+        &-edu{
+            text-align     : left;
+            text-decoration: underline;
+            font-family    : regular;
+            font-size      : 14px;
+            color          : @black;
+            line-height    : 1.5;
+    
+            margin-bottom: 12px;
+        }
+    }
+
+    &__workTitle {
+        text-align : right;
+        font-family: bold;
+        font-size  : 16px;
+        color      : @black;
+        line-height: 1.4;
+
+        &-edu{
+            text-align     : left;
+            font-family: bold;
+            font-size  : 16px;
+            color      : @black;
+            line-height: 1.4;
+        }
+    }
+
+    &__workSubtitle {
+        text-align : right;
+        font-family: LightItalic;
+        font-size  : 14px;
+        color      : @black;
+        line-height: 1.4;
+
+        &-edu{
+            text-align     : left;
+            font-family: LightItalic;
+            font-size  : 14px;
+            color      : @black;
+            line-height: 1.4;
+        }
+    }
+
+    &__workText {
+        text-align : right;
+        font-family: Light;
+        font-size  : 12px;
+        color      : @grey-vio;
+        line-height: 1.5;
+    }
+
+    &__education {
+        .flexGridElement(@gridMargin: 45px; @grid: 2; );
+        .flex(@direction            : column; @align: flex-start; );
+    }
+
+}

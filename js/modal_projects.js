@@ -1,5 +1,7 @@
+
+
 //По клику на кнопке выполняем функцию:
-document.querySelector('.btn-modalButton').addEventListener("click", function () {
+document.querySelector('.btn-showModalProjects').addEventListener("click", function () {
 
     //Получаем необходимые элементы документа:
     let modalWindowProjects = document.querySelector('#modalWindow-Projects');

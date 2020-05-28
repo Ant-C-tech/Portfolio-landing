@@ -1,4 +1,4 @@
-document.querySelector('.btn-modalButton').addEventListener("click", function () {
+document.querySelector('.btn-showModalProjects').addEventListener("click", function () {
 
     //Получаем необходимые элементы документа:
     let prevButton = document.querySelector('.modalProjects__controlButon-prev'),
