@@ -1,7 +1,7 @@
 //main:../../style.less
 
 .btn {
-    display: inline-block;
+    display      : inline-block;
     border       : 2px solid @black;
     border-radius: 20px;
     padding      : 10px 0;
@@ -38,15 +38,36 @@
 
         margin-right: 15px;
 
-        &-resume{
-           margin: 0 15px; 
+        &-resume {
+            margin: 0 15px;
+
+            .screen440( {
+                margin-top: 10px;
+                }
+    
+            );
         }
+
+        .screen820( {
+            display: block;
+            }
+
+        );
 
         .screen620( {
                 margin-right: 0;
             }
 
         );
+
+        &-alone{
+            .screen820( {
+                margin: 0 auto;
+                }
+    
+            );
+    
+        }
     }
 
     &-bigThin {
@@ -58,20 +79,22 @@
     }
 
     &-footer {
-        width      : auto;
-        border-radius: 15px;
+        width           : auto;
+        border-radius   : 15px;
         background-color: @black;
-        border     : 1px solid @grey-exl-vio;
-        color      : @grey-exl-vio;
-        font-family: 'Regular';
-        transition   : all 0.2s linear;
-        padding: 5px 20px;
-        
+        border          : 1px solid @grey-exl-vio;
+        color           : @grey-exl-vio;
+        font-family     : 'Regular';
+        transition      : all 0.2s linear;
+        padding         : 5px 20px;
+
         .screen440( {
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-top: 15px;
-        });
+                margin-left : 15px;
+                margin-right: 15px;
+                margin-top  : 15px;
+            }
+
+        );
 
         &:hover {
             transform       : scale(1.07);
