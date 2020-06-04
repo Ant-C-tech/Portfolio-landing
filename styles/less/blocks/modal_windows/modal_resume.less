@@ -9,7 +9,14 @@
     .screen820( {
             overflow-y: scroll;
             display   : block;
-           
+
+        }
+
+    );
+
+    .screen620( {
+            overflow-x:hidden;
+
         }
 
     );
@@ -49,7 +56,7 @@
         .flex();
         .flexContainer(@-margin-lr: -45px);
 
-        max-width: 860px;
+        max-width: 870px;
         margin   : 0 auto;
         padding  : 0 15px;
 
@@ -77,7 +84,7 @@
 
         .screen620( {
                 text-align : center;
-                margin-top : 40px;
+                margin-top : 10px;
                 width      : 100%;
             }
 
@@ -231,6 +238,12 @@
         color      : @grey-vio;
         line-height: 1.5;
 
+        .screen900( {
+                font-size : 11px;
+            }
+
+        );
+
         .screen620( {
                 text-align : center;
                 max-width  : 400px;
@@ -246,7 +259,7 @@
         .screen620( {
                 .flexGridElement(@gridMargin: 15px; @grid: 1; );
                 .flex(@direction            : column; @align: center; );
-                margin-top                  : 40px;
+                margin-top                  : 10px;
             }
 
         );
@@ -343,6 +356,16 @@
         color      : @grey-vio;
         line-height: 1.5;
         max-width  : 280px;
+
+        .screen900( {
+                font-size : 11px;
+            }
+
+        );
+    }
+
+    &__btnContainer{
+        margin: 0 auto 30px;
     }
 
 
