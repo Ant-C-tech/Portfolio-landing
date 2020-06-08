@@ -1,0 +1,36 @@
+//main:../../../style.less
+
+.modalHire {
+
+    .flex();
+
+
+    &__form {
+        min-height       : 675px;
+        width     : 45%;
+    }
+
+    &__photo {
+        min-height       : 675px;
+        width        : 55%;
+        padding-top  : 15px;
+        padding-right: 15px;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__photoItem {
+        display : block;
+        position: absolute;
+        top     : 0;
+        left    : 0;
+
+        transition: all linear;
+    }
+
+    .btnContainer{
+        position: relative;
+        z-index: 100;
+    }
+}

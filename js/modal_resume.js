@@ -46,6 +46,21 @@ for (item of document.querySelectorAll('.btn-showModalResume')) {
             }
         });
 
+        //Нажатие кнопки "HIRE ME" в данном окне
+        document.querySelector('.JS_resumeHire').addEventListener("click", function () {
+            //Обнуляем стили после закрытия модального окна:
+            design.style.width = 0
+            illustrator.style.width = 0
+            photoshop.style.width = 0
+            sketch.style.width = 0
+
+            //Скрываем модальное окно "RESUME":
+            const modalWindow = document.querySelector('#modalWindow-Resume')
+            setTimeout(() => {
+                modalWindow.style.bottom = -3000 + 'px';
+            }, 300);
+        })
+
         //Обнуляем стили после закрытия модального окна:
         const closeBtnResume = document.querySelector('#closeBtnResume')
         closeBtnResume.addEventListener('click', function (event) {
@@ -85,7 +100,6 @@ for (item of document.querySelectorAll('.btn-showModalResume')) {
         }
 
         function resize() {
-            modalResumeContent.style.overflowY = "scroll"
             modalResumeContent.style.overflowX = "hidden"
             modalResumeContent.style.display = "block"
         }

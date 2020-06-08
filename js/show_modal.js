@@ -1,9 +1,10 @@
 // window.onload = function () {
 
-// Размеры модального окна по атрибуту кнопки:
+// Параметры модального окна по атрибуту кнопки:
 let modalWindowWidth,
     modalWindowHeight,
-    modalWindowcontent;
+    modalWindowContent,
+    modalWindowDelay;
 
 //Получаем размеры пользовательского окна:
 let windowWidth = document.documentElement.clientWidth;
@@ -12,14 +13,14 @@ let windowWidth = document.documentElement.clientWidth;
 //Получаем необходимые элементы документа:
 
 let modalWindow;
-let body = document.querySelector('body');
-let modalMask = document.querySelector('.modalMask');
-let btnWindowCloseCollection = document.querySelectorAll('.modalWindow__closeButton');
+const body = document.querySelector('body')
+const modalMask = document.querySelector('.modalMask')
+const btnWindowCloseCollection = document.querySelectorAll('.modalWindow__closeButton')
 
-let hlineCollection = document.querySelectorAll('.modalWindow__btnGraph-h');
-let vlineCollection = document.querySelectorAll('.modalWindow__btnGraph-v');
+const hlineCollection = document.querySelectorAll('.modalWindow__btnGraph-h')
+const vlineCollection = document.querySelectorAll('.modalWindow__btnGraph-v')
 
-let btnShowModalCollection = document.querySelectorAll('.btn-modalButton');
+const btnShowModalCollection = document.querySelectorAll('.btn-modalButton')
 
 //"Слушаем" событие клик на кнопках показ модальных окон:
 for (let i = 0; i < btnShowModalCollection.length; i++) {
@@ -41,14 +42,15 @@ for (let i = 0; i < btnShowModalCollection.length; i++) {
         }
 
         //Получаем атрибуты модального окна:
-        modalWindowWidth = getAttributeWidth(event);
-        modalWindowHeight = getAttributeHeight(event);
-        modalWindowcontent = getAttributeContent(event);
+        modalWindowWidth = getAttributeWidth(event)
+        modalWindowHeight = getAttributeHeight(event)
+        modalWindowContent = getAttributeContent(event)
+        modalWindowDelay = getAttributeDelay(event)
 
         //Выбираем контент модального окна:
-        if (modalWindowcontent == 'projects') {
+        if (modalWindowContent == 'projects') {
             modalWindow = document.querySelector('#modalWindow-Projects');
-        } else if (modalWindowcontent == 'resume') {
+        } else if (modalWindowContent == 'resume') {
             modalWindow = document.querySelector('#modalWindow-Resume');
         } else {
             modalWindow = document.querySelector('#modalWindow-Hire');
@@ -108,6 +110,10 @@ function getAttributeContent(event) {
     return event.target.getAttribute('data-modal');
 }
 
+function getAttributeDelay(event) {
+    return event.target.getAttribute('data-delay');
+}
+
 function modalWindowParam() {
 
     windowWidth = document.documentElement.clientWidth;
@@ -123,16 +129,32 @@ function modalWindowParam() {
         modalWindow.style.left = 0;
     }
 
+    //В случае, если у кнопки есть атрибут data-delay, то это кнопка "HIRE ME" модального окна "RESUME".
+    //Учитываем, что для этой кнопки необходима дополнительная задержка показа модального окна:
     if (windowHeight > modalWindowHeight) {
-        modalWindow.style.height = modalWindowHeight + "px";
-        setTimeout(() => {
-            modalWindow.style.bottom = ((windowHeight - modalWindowHeight) / 2) + "px";
-        }, 100);
+        if (modalWindowDelay === 'true') {
+            modalWindow.style.height = modalWindowHeight + "px";
+            setTimeout(() => {
+                modalWindow.style.bottom = ((windowHeight - modalWindowHeight) / 2) + "px";
+            }, 600);
+        } else{
+            modalWindow.style.height = modalWindowHeight + "px";
+            setTimeout(() => {
+                modalWindow.style.bottom = ((windowHeight - modalWindowHeight) / 2) + "px";
+            }, 300);
+        }
     } else {
-        modalWindow.style.height = windowHeight + "px";
-        setTimeout(() => {
-            modalWindow.style.bottom = 0;
-        }, 100);
+        if (modalWindowDelay === 'true') {
+            modalWindow.style.height = windowHeight + "px";
+            setTimeout(() => {
+                modalWindow.style.bottom = 0;
+            }, 600);
+        } else{
+            modalWindow.style.height = windowHeight + "px";
+            setTimeout(() => {
+                modalWindow.style.bottom = 0;
+            }, 300);
+        } 
     }
 }
 
