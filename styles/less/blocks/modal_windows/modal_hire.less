@@ -26,7 +26,13 @@
         top     : 0;
         left    : 0;
 
-        transition: all linear;
+        transition: 0.5s filter linear;
+
+        filter: grayscale(80%);
+
+        &:hover{
+            filter: grayscale(30%);
+        }
     }
 
     .btnContainer{
