@@ -42,26 +42,32 @@
             margin: 0 15px;
 
             .screen440( {
-                width      : 150px;
-                margin-top: 10px;
+                    width     : 150px;
+                    margin-top: 10px;
                 }
-    
+
             );
         }
 
         .screen1200( {
-            display: block;
-            margin: 10px auto;
+                display: block;
+                margin : 10px auto;
             }
 
         );
 
         &-alone {
             display: block;
-            margin: 10px auto;
+            margin : 10px auto;
         }
+    }
 
-
+    &-submit {
+        display   : block;
+        background-color: @black;
+        color: @light;
+        height: 52px;
+        border-radius: 25px;
     }
 
     &-bigThin {
@@ -81,7 +87,7 @@
         font-family     : 'Regular';
         transition      : all 0.2s linear;
         padding         : 5px 20px;
-        cursor: pointer;
+        cursor          : pointer;
 
         .screen440( {
                 margin-left : 15px;

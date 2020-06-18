@@ -43,7 +43,8 @@
                         <a class="menu__menuItem" href="#">CONTACT</a>
                     </div>
                 </div>
-                <p class="btn btn-modalButton" data-width="900" data-height="675" data-modal="hireMe">HIRE
+                <p class="btn btn-modalButton btn-showModalHireMe" data-width="900" data-height="675"
+                    data-modal="hireMe">HIRE
                     ME</p>
             </div>
     </header>
@@ -83,8 +84,8 @@
                         </a>
                     </div>
                     <div class="intro__buttons">
-                        <p class="btn btn-middleThin btn-modalButton" data-width="900" data-height="675"
-                            data-modal="hireMe">HIRE ME</p>
+                        <p class="btn btn-middleThin btn-modalButton btn-showModalHireMe" data-width="900"
+                            data-height="675" data-modal="hireMe">HIRE ME</p>
                         <p class="btn btn-bigThin btn-modalButton btn-showModalResume" data-width="1200"
                             data-height="1240" data-modal="resume">SEE MY RESUME</p>
                     </div>
@@ -283,8 +284,8 @@
                         Duis viverra, quam non imperdiet scelerisque, urna nunc consequat velit, in mollis erat nibh in
                         libero.</p>
                     <div class="about__buttons">
-                        <p class="btn btn-middleThin btn-modalButton" data-width="900" data-height="675"
-                            data-modal="hireMe">HIRE ME</p>
+                        <p class="btn btn-middleThin btn-modalButton btn-showModalHireMe" data-width="900"
+                            data-height="675" data-modal="hireMe">HIRE ME</p>
                         <p class="btn btn-bigThin btn-modalButton btn-showModalResume" data-width="1200"
                             data-height="1240" data-modal="resume">SEE MY RESUME</p>
                     </div>
@@ -539,7 +540,8 @@
                     <a class="footerMenu__menuItem scroll__bottomButton" href="#">About Me</a>
                     <a class="footerMenu__menuItem" href="https://www.twitter.com/">Blog</a>
                     <a class="footerMenu__menuItem" href="#">Contact</a>
-                    <p class="btn-footer btn-modalButton" data-width="900" data-height="675" data-modal="hireMe">HIRE ME
+                    <p class="btn-footer btn-modalButton btn-showModalHireMe" data-width="900" data-height="675"
+                        data-modal="hireMe">HIRE ME
                     </p>
                 </div>
             </div>
@@ -874,32 +876,63 @@
                 </div>
             </div>
             <div class="modalResume__btnContainer">
-                <p class="btn btn-middleThin btn-middleThin-alone btn-modalButton JS_resumeHire" data-width="900" data-height="675"
-                    data-modal="hireMe" data-delay="true">HIRE ME</p>
+                <p class="btn btn-middleThin btn-middleThin-alone btn-modalButton btn-showModalHireMe JS_resumeHire"
+                    data-width="900" data-height="675" data-modal="hireMe" data-delay="true">HIRE ME</p>
             </div>
         </div>
     </div>
 
     <div class="modalWindow" id="modalWindow-Hire">
         <div class="modalHire">
-            <div class="modalHire__form"></div>
-            <div class="modalHire__photo">
 
-                <div class="btnContainer">
-                    <div class="modalWindow__closeButton">
-                        <div class="modalWindow__btnWrapper">
-                            <span class="modalWindow__btnGraph modalWindow__btnGraph-h"></span>
-                            <span class="modalWindow__btnGraph modalWindow__btnGraph-v"></span>
-                        </div>
+            <div class="modalHire__formSection">
+
+                <h3 class="modalHire__title">LET'S TALK!</h3>
+                <p class="modalHire__subtitle">CALL ME OR SEND ME A REQUEST</p>
+
+                <div class="modalHire__contacts">
+                    <div class="modalHire__contactsBlock">
+                        <img class="modalHire__icon" src="img/modal/phone_icon.svg" alt="phone">
+                        <p class="modalHire__contactsContent">(200) 100 3000</p>
+                    </div>
+                    <div class="modalHire__contactsBlock">
+                        <img class="modalHire__icon" src="img/modal/email_icon.svg" alt="email">
+                        <p class="modalHire__contactsContent">designer@ui43.com</p>
                     </div>
                 </div>
-                
 
-                <img class="modalHire__photoItem" src="img/modal/1.jpg" alt="#">
-                <img class="modalHire__photoItem" src="img/modal/2.jpg" alt="#">
-                <img class="modalHire__photoItem" src="img/modal/3.jpg" alt="#">
-                <img class="modalHire__photoItem" src="img/modal/4.jpg" alt="#">
-                <img class="modalHire__photoItem" src="img/modal/5.jpg" alt="#">
+                <form class="modalHire__form" action="/" method="POST">
+
+                    <label for="mailInput" class="modalHire__formTitle">Adress e-mail</label>
+                    <input class="modalHire__mailInput" type="text" name="mailInput" id="mailInput"
+                        placeholder="Adress e-mail">
+
+                    <label for="textInput" class="modalHire__formTitle">Request</label>
+                    <textarea class="modalHire__textInput" name="textInput" id="textInput" cols="30" rows="10"
+                        placeholder="Type your request..."></textarea>
+
+                    <div class="modalHire__btnContainer">
+                        <button type="submit" class="btn btn-middleThin btn-submit">SEND</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="modalHire__photo">
+                    <img class="modalHire__photoItem" src="img/modal/1.jpg" alt="#">
+                    <img class="modalHire__photoItem" src="img/modal/2.jpg" alt="#">
+                    <img class="modalHire__photoItem" src="img/modal/3.jpg" alt="#">
+                    <img class="modalHire__photoItem" src="img/modal/4.jpg" alt="#">
+                    <img class="modalHire__photoItem" src="img/modal/5.jpg" alt="#">
+            </div>
+
+            <div class="btnContainer">
+                <div class="modalWindow__closeButton">
+                    <div class="modalWindow__btnWrapper">
+                        <span class="modalWindow__btnGraph modalWindow__btnGraph-h"></span>
+                        <span class="modalWindow__btnGraph modalWindow__btnGraph-v"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

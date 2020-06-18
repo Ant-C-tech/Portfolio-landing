@@ -3,21 +3,163 @@
 .modalHire {
 
     .flex();
+    position: relative;
 
-
-    &__form {
-        min-height       : 675px;
-        width     : 45%;
+    .screen820( {
+       display: block;
     }
 
+);
+
+
+    &__formSection {
+        padding   : 30px 35px;
+        min-height: 675px;
+        width     : 45%;
+
+        .screen820( {
+                width : 100%;
+            }
+
+        );
+    }
+
+    &__title {
+        font-family   : Bold;
+        font-size     : 45px;
+        text-transform: uppercase;
+        color         : @black;
+
+        .screen820( {
+           text-align: center;
+           margin-top: 10px;
+        }
+
+    );
+    }
+
+    &__subtitle {
+        font-family   : regular;
+        font-size     : 16px;
+        text-transform: uppercase;
+        color         : @black;
+
+        .screen820( {
+            text-align: center;
+         }
+ 
+     );
+    }
+
+    &__contacts {
+        margin: 25px 0 30px;
+    }
+
+    &__contactsBlock {
+        .flex(@justify: flex-start; );
+        margin-bottom : 8px;
+
+        .screen820( {
+            .flex(@justify: center; );
+         }
+ 
+     );
+    }
+
+    &__icon {
+        display     : block;
+        height      : 22px;
+        margin-right: 12px;
+    }
+
+    &__contactsContent {
+        font-family: regular;
+        font-size  : 14px;
+        color      : @black;
+    }
+
+    &__form {
+        max-width    : 360px;
+        margin-bottom: 15px;
+
+        .screen820( {
+            max-width    : 100%;
+         }
+ 
+     );
+    }
+
+    &__formTitle {
+        font-family: bold;
+        font-size  : 12px;
+        color      : @black;
+        margin-left: 25px;
+    }
+
+    &__mailInput {
+        width : 100%;
+        height: 55px;
+        margin: 8px 0 30px;
+
+        border       : 1px solid @black-op30;
+        border-radius: 20px;
+
+        font-family: regular;
+        font-size  : 12px;
+        color      : @black;
+        padding    : 0 25px;
+        transition : border-color ease-in-out 0.5s;
+
+        &:focus {
+            outline     : 0;
+            border-color: @modal-mask;
+        }
+    }
+
+    &__textInput {
+        width : 100%;
+        margin: 8px 0 10px;
+
+        border       : 1px solid @black-op30;
+        border-radius: 20px;
+
+        font-family: regular;
+        font-size  : 12px;
+        color      : @black;
+        padding    : 25px;
+        transition : border-color ease-in-out 0.5s;
+
+        resize: none;
+
+        &:focus {
+            outline     : 0;
+            border-color: @modal-mask;
+        }
+    }
+
+    &__btnContainer {
+
+        .flex(@justify: flex-end; );
+        margin-right  : -15px;
+    }
+
+    //--------------------------------------------------
+
     &__photo {
-        min-height       : 675px;
+        min-height   : 675px;
         width        : 55%;
         padding-top  : 15px;
         padding-right: 15px;
 
         position: relative;
         overflow: hidden;
+
+        .screen820( {
+                width: 495px;
+                margin: 0 auto;
+            }
+
+        );
     }
 
     &__photoItem {
@@ -30,13 +172,17 @@
 
         filter: grayscale(80%);
 
-        &:hover{
+        &:hover {
             filter: grayscale(30%);
         }
+
     }
 
-    .btnContainer{
-        position: relative;
-        z-index: 100;
+    .btnContainer {
+        
+        position: absolute;
+        top     : 15px;
+        right   : 10px;
+        z-index : 100;
     }
 }
