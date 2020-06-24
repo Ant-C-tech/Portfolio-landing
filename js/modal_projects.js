@@ -16,6 +16,7 @@ document.querySelector('.btn-showModalProjects').addEventListener("click", funct
 
     //Пересчитываем свойства модального окна при смене ориентации экрана:
     window.addEventListener('resize', function (event) {
+        textBlock.forEach(element => element.style.maxHeight = 85 + 'px');
         modalDimCalc();
     });
 
@@ -48,7 +49,6 @@ document.querySelector('.btn-showModalProjects').addEventListener("click", funct
             textPart.style.height = ((modalWindowProjects.offsetHeight / 100) * 40) + "px";
             textPart.style.width = '100%';
             textBlock.forEach(element => element.style.maxWidth = '100%');
-            textBlock.forEach(element => element.style.maxHeight = 85 + 'px');
         }
     }
 

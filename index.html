@@ -104,14 +104,14 @@
     <div class="works scroll__target">
         <div class="container">
             <div class="works__menu">
-                <a class="works__menuItem" href="#">All</a>
-                <a class="works__menuItem" href="#">App</a>
-                <a class="works__menuItem" href="#">Website</a>
-                <a class="works__menuItem" href="#">Interaction</a>
+                <p class="works__menuItem sortingBtn" data-sort="all" href="#">All</p>
+                <p class="works__menuItem sortingBtn" data-sort="app" href="#">App</p>
+                <p class="works__menuItem sortingBtn" data-sort="website" href="#">Website</p>
+                <p class="works__menuItem sortingBtn" data-sort="interaction" href="#">Interaction</p>
             </div>
             <div class="works__wrapper">
 
-                <div class="card">
+                <div class="card sortElem" data-content="website">
                     <div class="card__photo">
                         <a href="https://ant-c-tech.github.io/mogo-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj1.webp"
@@ -127,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="website">
                     <div class="card__photo">
                         <a href="https://ant-c-tech.github.io/piroll-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj2.webp"
@@ -143,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="website">
                     <div class="card__photo">
                         <a href="https://ant-c-tech.github.io/activeBox-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj3.webp"
@@ -159,7 +159,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="website">
                     <div class="card__photo">
                         <a href="#" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj4.webp"
@@ -175,7 +175,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="website">
                     <div class="card__photo">
                         <a href="https://ant-c-tech.github.io/Campp-landing/" target="_blank" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="img/works/proj5.webp"
@@ -191,7 +191,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="none">
                     <div class="card__photo">
                         <a href="#" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="https://placehold.it/380x273"
@@ -207,7 +207,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="none">
                     <div class="card__photo">
                         <a href="#" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="https://placehold.it/380x273"
@@ -223,7 +223,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="none">
                     <div class="card__photo">
                         <a href="#" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="https://placehold.it/380x273"
@@ -239,7 +239,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card sortElem" data-content="none">
                     <div class="card__photo">
                         <a href="#" class="card__link">
                             <img class="card__pic lazyload" loading="lazy" data-src="https://placehold.it/380x273"
@@ -286,7 +286,7 @@
                     <div class="about__buttons">
                         <p class="btn btn-middleThin btn-modalButton btn-showModalHireMe" data-width="900"
                             data-height="675" data-modal="hireMe">HIRE ME</p>
-                        <p class="btn btn-bigThin btn-modalButton btn-showModalResume" data-width="1200"
+                        <p class="btn btn-middleThin btn-modalButton btn-showModalResume" data-width="1200"
                             data-height="1240" data-modal="resume">SEE MY RESUME</p>
                     </div>
                 </div>
@@ -753,8 +753,8 @@
 
             <h3 class="modalResume__title">RESUME</h3>
             <div class="modalResume__buttons">
-                <p class="btn btn-middleThin btn-middleThin-resume">DOWNLOAD PDF</p>
-                <p class="btn btn-middleThin btn-middleThin-resume">PRINT</p>
+                <a href="/img/resume_Lewis_Nathaniel.pdf" download class="btn btn-middleThin btn-middleThin-resume">DOWNLOAD PDF</a>
+                <a href="print_resume.html" target="_blank" class="btn btn-middleThin btn-middleThin-resume">PRINT</a>
             </div>
             <div class="modalResume__content">
                 <div class="modalResume__experience">
@@ -948,6 +948,7 @@
     <script src="js/modal_slider.js"></script>
     <script src="js/modal_resume.js"></script>
     <script src="js/modal_hire_slider.js"></script>
+    <script src="js/sorting_works.js"></script>
 
 
 
