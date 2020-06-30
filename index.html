@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_package_v0.16/favicon-16x16.png">
-    <!-- <link rel="manifest" href="img/favicon_package_v0.16/site.webmanifest"> -->
+    <link rel="manifest" href="img/favicon_package_v0.16/site.webmanifest">
     <link rel="mask-icon" href="img/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -40,7 +40,8 @@
                         <a class="menu__menuItem scroll__topButton" href="#">WORK</a>
                         <a class="menu__menuItem scroll__topButton" href="#">ABOUT ME</a>
                         <a class="menu__menuItem scroll__topButton" href="#">BLOG</a>
-                        <a class="menu__menuItem" href="#">CONTACT</a>
+                        <a class="menu__menuItem btn-modalButton" data-width="900" data-height="280"
+                        data-modal="contacts">CONTACT</a>
                     </div>
                 </div>
                 <p class="btn btn-modalButton btn-showModalHireMe" data-width="900" data-height="675"
@@ -539,7 +540,8 @@
                     <a class="footerMenu__menuItem scroll__bottomButton" href="#">Work</a>
                     <a class="footerMenu__menuItem scroll__bottomButton" href="#">About Me</a>
                     <a class="footerMenu__menuItem" href="https://www.twitter.com/">Blog</a>
-                    <a class="footerMenu__menuItem" href="#">Contact</a>
+                    <a class="footerMenu__menuItem btn-modalButton" data-width="900" data-height="280"
+                    data-modal="contacts">Contact</a>
                     <p class="btn-footer btn-modalButton btn-showModalHireMe" data-width="900" data-height="675"
                         data-modal="hireMe">HIRE ME
                     </p>
@@ -554,6 +556,7 @@
     <!-- Modals -->
     <div class="modalMask"></div>
 
+    <!-- Projects -->
     <div class="modalWindow" id="modalWindow-Projects">
 
         <div class="modalProjects">
@@ -741,6 +744,7 @@
         </div>
     </div>
 
+    <!-- Resume -->
     <div class="modalWindow" id="modalWindow-Resume">
 
         <div class="modalResume">
@@ -753,7 +757,8 @@
 
             <h3 class="modalResume__title">RESUME</h3>
             <div class="modalResume__buttons">
-                <a href="https://github.com/Ant-C-tech/portfolio-landing/blob/master/img/resume_Lewis_Nathaniel.pdf" download class="btn btn-middleThin btn-middleThin-resume">DOWNLOAD PDF</a>
+                <a href="/img/resume_Lewis_Nathaniel.pdf" download
+                    class="btn btn-middleThin btn-middleThin-resume">DOWNLOAD PDF</a>
                 <a href="print_resume.html" target="_blank" class="btn btn-middleThin btn-middleThin-resume">PRINT</a>
             </div>
             <div class="modalResume__content">
@@ -882,6 +887,7 @@
         </div>
     </div>
 
+    <!-- Hire me-->
     <div class="modalWindow" id="modalWindow-Hire">
         <div class="modalHire">
 
@@ -912,18 +918,18 @@
                         placeholder="Type your request..."></textarea>
 
                     <div class="modalHire__btnContainer">
-                        <button type="submit" class="btn btn-middleThin btn-submit">SEND</button>
+                        <button  class="btn btn-middleThin btn-submit">SEND</button>
                     </div>
                 </form>
 
             </div>
 
             <div class="modalHire__photo">
-                    <img class="modalHire__photoItem" src="img/modal/1.jpg" alt="#">
-                    <img class="modalHire__photoItem" src="img/modal/2.jpg" alt="#">
-                    <img class="modalHire__photoItem" src="img/modal/3.jpg" alt="#">
-                    <img class="modalHire__photoItem" src="img/modal/4.jpg" alt="#">
-                    <img class="modalHire__photoItem" src="img/modal/5.jpg" alt="#">
+                <img class="modalHire__photoItem" src="img/modal/1.jpg" alt="#">
+                <img class="modalHire__photoItem" src="img/modal/2.jpg" alt="#">
+                <img class="modalHire__photoItem" src="img/modal/3.jpg" alt="#">
+                <img class="modalHire__photoItem" src="img/modal/4.jpg" alt="#">
+                <img class="modalHire__photoItem" src="img/modal/5.jpg" alt="#">
             </div>
 
             <div class="btnContainer">
@@ -936,6 +942,35 @@
             </div>
         </div>
     </div>
+
+    <!-- Contact -->
+    <div class="modalWindow modalContacts" id="modalWindow-Contacts">
+
+            <h3 class="modalContacts__title">LET'S TALK!</h3>
+            <p class="modalContacts__subtitle">CALL ME OR SEND ME EMAIL</p>
+
+            <div class="modalContacts__contacts">
+                <div class="modalContacts__contactsBlock">
+                    <img class="modalContacts__icon" src="img/modal/phone_icon.svg" alt="phone">
+                    <p class="modalContacts__contactsContent">(200) 100 3000</p>
+                </div>
+                <div class="modalContacts__contactsBlock">
+                    <img class="modalContacts__icon" src="img/modal/email_icon.svg" alt="email">
+                    <p class="modalContacts__contactsContent">designer@ui43.com</p>
+                </div>
+            </div>
+
+
+        <div class="btnContainer">
+            <div class="modalWindow__closeButton">
+                <div class="modalWindow__btnWrapper">
+                    <span class="modalWindow__btnGraph modalWindow__btnGraph-h"></span>
+                    <span class="modalWindow__btnGraph modalWindow__btnGraph-v"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <!-- \Modals -->
 
 
@@ -947,8 +982,9 @@
     <script src="js/modal_projects.js"></script>
     <script src="js/modal_slider.js"></script>
     <script src="js/modal_resume.js"></script>
-    <script src="js/modal_hire_slider.js"></script>
     <script src="js/sorting_works.js"></script>
+    <script src="js/send_form.js"></script>
+    <script src="js/modal_hire_slider.js"></script>
 
 
 

@@ -1,4 +1,4 @@
-// window.onload = function () {
+
 
 // Параметры модального окна по атрибуту кнопки:
 let modalWindowWidth,
@@ -52,8 +52,10 @@ for (let i = 0; i < btnShowModalCollection.length; i++) {
             modalWindow = document.querySelector('#modalWindow-Projects');
         } else if (modalWindowContent == 'resume') {
             modalWindow = document.querySelector('#modalWindow-Resume');
-        } else {
+        } else if(modalWindowContent == 'hireMe'){
             modalWindow = document.querySelector('#modalWindow-Hire');
+        } else{
+            modalWindow = document.querySelector('#modalWindow-Contacts');
         }
 
 
@@ -179,7 +181,3 @@ function modalWindowRecalc() {
         modalWindow.style.bottom = 0;
     }
 }
-
-
-
-// }

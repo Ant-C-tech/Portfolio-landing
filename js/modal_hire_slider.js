@@ -10,7 +10,6 @@ window.onload = function () {
             const hireMe = document.querySelector('#modalWindow-Hire')
             const modalHireMeContent = document.querySelector('.modalHire')
             const photoBlock = document.querySelector('.modalHire__photo')
-
             //Предварительная расстановка слайдов
             const layerCollection = document.querySelectorAll('.modalHire__photoItem');
             let zIndex = 90
@@ -22,7 +21,6 @@ window.onload = function () {
             let slide = 0
             let y = 0
             let timer
-
 
             //Разрешаем прокрутку по размерам:
             if (parseInt(hireMe.style.height) < 675 || parseInt(hireMe.style.width) < 820) {

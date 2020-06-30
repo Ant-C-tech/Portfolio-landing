@@ -1,0 +1,79 @@
+//main:../../../style.less
+
+.modalContacts {
+
+    padding: 30px 35px;
+
+    &__title {
+        font-family   : Bold;
+        font-size     : 45px;
+        text-transform: uppercase;
+        color         : @black;
+        text-align: center;
+        margin-top: 40px;
+
+        .screen820( {
+           text-align: center;
+           margin-top: 50px;
+        }
+
+    );
+
+    .screen440( {
+        text-align: center;
+        margin-top: 20px;
+     }
+
+ );
+    }
+
+    &__subtitle {
+        font-family   : regular;
+        font-size     : 16px;
+        text-transform: uppercase;
+        color         : @black;
+        text-align: center;
+
+        .screen820( {
+            text-align: center;
+         }
+ 
+     );
+    }
+
+    &__contacts {
+        margin: 25px 0 30px;
+    }
+
+    &__contactsBlock {
+        .flex(@justify: center; );
+        margin-bottom : 8px;
+
+        .screen820( {
+            .flex(@justify: center; );
+         }
+ 
+     );
+    }
+
+    &__icon {
+        display     : block;
+        height      : 22px;
+        margin-right: 12px;
+    }
+
+    &__contactsContent {
+        font-family: regular;
+        font-size  : 14px;
+        color      : @black;
+    }
+
+
+    .btnContainer {
+        
+        position: absolute;
+        top     : 15px;
+        right   : 10px;
+        z-index : 100;
+    }
+}
