@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     //Действия по нажатию кнопки 'HIRE ME'
     for (item of document.querySelectorAll('.btn-showModalHireMe')) {
@@ -142,4 +142,3 @@ window.onload = function () {
 
         })
     }
-}

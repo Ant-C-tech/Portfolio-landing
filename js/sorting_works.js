@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
 
     for (item of document.querySelectorAll('.sortingBtn')) {
@@ -10,7 +10,6 @@ window.onload = function () {
         for (item of sortElem) {
             console.log(item.getAttribute('data-content'))
         }
-        // console.log(this.getAttribute('data-sort'))
 
         if (this.getAttribute('data-sort') === 'all') {
             for (item of sortElem) {
@@ -43,4 +42,3 @@ window.onload = function () {
             }
         }
     }
-}
