@@ -1,4 +1,3 @@
-// window.onload = function () {
 
     const stepTime = 5, // Время шага прокрутки;
         scrollTime = 700; //Время прокрутки;
@@ -67,5 +66,3 @@
             left: elemPosition.left + pageXOffset
         };
     }
-
-// }
